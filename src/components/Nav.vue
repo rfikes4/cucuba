@@ -200,7 +200,6 @@
 					if(document.getElementsByClassName('nav-link')[0].classList.contains("navActive")){
 						window.setTimeout(() => {
 							document.getElementsByClassName('nav-link')[0].classList.add("navDisable");
-							console.log('asdasd');
 						},1);	
 					}
 					//document.getElementsByClassName('nav-link')[0].classList.add("navDisable");
