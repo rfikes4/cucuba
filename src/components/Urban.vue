@@ -50,7 +50,7 @@
 			</div>
 			<p class="s-margin">The Illustrator tracing was exported to .svg and animated with GSAP. I then used a portable wireless router (TP-Link TL-MR3020) and built a node.js server with Socket.io which allowed anyone on the network to connect and control the visuals. Then Syphoner was used to stream the browser to Resolume to be mapped and projected back onto the mural.</p>
 			<div class="vimeo">
-				<iframe src="https://player.vimeo.com/video/227681298?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<iframe src="https://player.vimeo.com/video/227808035?autoplay=1&loop=1&autopause=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 			</div>
 		</section>
 
