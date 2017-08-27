@@ -3,13 +3,13 @@
 		<div id="midi-container">
 			<div id="home-bg">
 				<div id="p1" class="midi-pattern"></div>
-				<div id="p2" class="midi-pattern"></div>
-				<div id="p3" class="midi-pattern"></div>
-				<div id="p4" class="midi-pattern"></div>
-				<div id="p5" class="midi-pattern"></div>
-				<div id="p6" class="midi-pattern"></div>
-				<div id="p7" class="midi-pattern"></div>
-				<div id="p8" class="midi-pattern"></div>
+				<!-- <div id="p2" class="midi-pattern"></div> -->
+				<!-- <div id="p3" class="midi-pattern"></div> -->
+				<!-- <div id="p4" class="midi-pattern"></div> -->
+				<!-- <div id="p5" class="midi-pattern"></div> -->
+				<!-- <div id="p6" class="midi-pattern"></div> -->
+				<!-- <div id="p7" class="midi-pattern"></div> -->
+				<!-- <div id="p8" class="midi-pattern"></div> -->
 			</div>
 			<div id="midi">
 				<div id="l3" class="petal"></div>

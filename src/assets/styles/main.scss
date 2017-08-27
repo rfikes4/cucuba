@@ -63,18 +63,17 @@ a {
     height: 100vh;
     width: 100vw;
     position: absolute;
+    overflow: hidden;
 }
 
 .midi-pattern {
-	width: 80vh;
-	height: 80vh;
-	// background: red;
-	// border: 1px solid blue;
+	width: 400vh;
+	height: 400vh;
+	background-size: 100vh 100vh;
 	position: absolute;
 	transform: rotate(45deg);
 	background-color: white;
 	background-repeat: repeat;
-	background-size: contain;
 }
 
 #p1 {
@@ -103,12 +102,10 @@ a {
 
 #p7 {
 	background-image: url('../../assets/images/patterns/pattern7.svg');
-	transform: scale(2);
 }
 
 #p8 {
 	background-image: url('../../assets/images/patterns/pattern8.svg');
-	// transform: scale(2);
 }
 
 #midi-container {
