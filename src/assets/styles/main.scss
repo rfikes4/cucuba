@@ -171,17 +171,15 @@ a {
 		height: 100%;
     	background: transparent;
     	box-shadow: 0 0 0 0 rgba(255,255,255,1);
-    	// transition: all .6s ease-out;
+    	opacity: 1;
+    	transition: all 0s ease-out;
     }
 }
 
 .midi-q {
-	// transition: all .6s ease-out;
 	&::after {
-		content: "";
 		background: white;
 		box-shadow: 0 0 4vh 0 rgba(255,255,255,1);
-		// transition: all 0s ease-in;
 	}
 }
 

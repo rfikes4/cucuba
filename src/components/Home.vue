@@ -68,7 +68,7 @@
 				p7: null,
 				p8: null,
 				playing: false,
-				beat: 16,
+				beat: 32,
 				oddBeat: null,
 				playlist: {},
 				tracks: [],
@@ -152,16 +152,17 @@
 				// Toggle midi btn
 				if ( document.getElementById(event.target.id).classList.contains("midi-btn-active")) {
 					document.getElementById(event.target.id).classList.remove("midi-btn-active", "midi-q");
-						// Remove Track
+						// Remove and stop track
 						for ( var i = this.tracks.length - 1; i >= 0; i-- ) {
 						    if ( this.tracks[i] === event.target.id ) {
-						       this.tracks.splice(i, 1);
+						    	this.playlist[this.tracks[i]].stop();
+						    	this.tracks.splice(i, 1);
 						    }
 						}
 						// Remove track from queue
 						for ( var i = this.queue.length - 1; i >= 0; i-- ) {
 						    if ( this.queue[i] === event.target.id ) {
-						       this.queue.splice(i, 1);
+						    	this.queue.splice(i, 1);
 						    }
 						}
 				} else {
@@ -173,25 +174,22 @@
 				// Play & Stop MIDI
 				if ( this.tracks.length > 0 && this.playing === false ) {
 					console.log('play');
-					this.playing = setInterval(this.midi, 60000 / 100);
+					this.playing = setInterval(this.midi, 60000 / 200);
 				} else if ( this.tracks.length == 0 ) {
 					console.log('stop');
-					Object.keys(this.playlist).forEach(function(key) {
-					    this.playlist[key].stop();
-					}.bind(this));
 					clearInterval(this.playing);
 					this.playing = false;
-					this.beat = 16;
+					this.beat = 32;
 				}
 			},
 			midi() {
-				console.log(this.beat);
-				if ( this.beat < 16 ) {
+				// console.log(this.beat);
+				if ( this.beat < 32 ) {
 					this.beat = this.beat + 1;
+
+					// Queue btn anim
 					this.oddBeat = this.beat % 2; 
 					for(var i = this.queue.length - 1; i >= 0; i--) {
-						// Queue btn anim
-						console.log(this.queue);
 						if ( this.oddBeat == 1 ){
 							document.getElementById(this.queue[i]).classList.add("midi-q");
 						} else {
@@ -203,19 +201,9 @@
 					for(var i = this.tracks.length - 1; i >= 0; i--) {
 						this.playlist[this.tracks[i]].play();
 						this.queue = [];
-						console.log(this.queue);
 						document.getElementById(this.tracks[i]).classList.add("midi-q");
-						// if ( this.oddBeat == 0 ){
-						// 	document.getElementById(this.tracks[i]).classList.add("midi-q");
-						// } else {
-						// 	document.getElementById(this.tracks[i]).classList.remove("midi-q");
-						// }
 					}
 				}
-
-				
-				// var q = new TimelineMax();
-				// q.to(this.p1, 16, {, ease: Power1.easeIn}, "0")
 			},
 			fps() {
 				window.countFPS = (function () {
