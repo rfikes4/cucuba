@@ -224,7 +224,8 @@ a {
 	background-repeat: no-repeat;
 	background-size: contain;
 	position: absolute;
-	filter: drop-shadow(0 0 2vh rgba(0, 0, 0, 1));
+	// filter: drop-shadow(0 0 2vh rgba(0, 0, 0, 1));
+	filter: drop-shadow(0 0 3vh #043506);
 }
 
 #l1 {

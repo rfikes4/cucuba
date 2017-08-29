@@ -6,6 +6,7 @@ import './assets/styles/styles.scss'
 import {TweenMax, Power2, TimelineLite} from "gsap";
 // import pixi from 'pixi'
 //import p5 from 'p5'
+import Howl from 'howler'
 
 Vue.config.productionTip = false
 

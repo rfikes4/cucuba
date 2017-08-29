@@ -80,6 +80,7 @@
 				p8: null,
 				playing: false,
 				beat: 16,
+				playlist: {},
 				tracks: [],
 				m0: null,
 				m1: null,
@@ -109,12 +110,6 @@
 			}
 		},
 		mounted() {
-			//this.fps();
-			// this.playing = true;
-			// this.tracks.push('hi3');
-			// this.beat = 16;
-			// this.play();
-
 			this.p1 = this.$refs.p1;
 			this.p2 = this.$refs.p2;
 			this.p3 = this.$refs.p3;
@@ -123,6 +118,37 @@
 			this.p6 = this.$refs.p6;
 			this.p7 = this.$refs.p7;
 			this.p8 = this.$refs.p8;
+
+			this.playlist = {
+				horn1: new Howl({src: ['static/audio/loops/horn1.mp3']}),
+				horn2: new Howl({src: ['static/audio/loops/horn2.mp3']}),
+				vocal1: new Howl({src: ['static/audio/loops/vocal1.mp3']}),
+				vocal2: new Howl({src: ['static/audio/loops/vocal2.mp3']}),
+				ensb1: new Howl({src: ['static/audio/loops/ensb1.mp3']}),
+				ensb2: new Howl({src: ['static/audio/loops/ensb2.mp3']}),
+				
+				drum1: new Howl({src: ['static/audio/loops/drum1.mp3']}),
+				drum2: new Howl({src: ['static/audio/loops/drum2.mp3']}),
+				drum3: new Howl({src: ['static/audio/loops/drum3.mp3']}),
+				drum4: new Howl({src: ['static/audio/loops/drum4.mp3']}),
+				drum5: new Howl({src: ['static/audio/loops/drum5.mp3']}),
+				drum6: new Howl({src: ['static/audio/loops/drum6.mp3']}),
+				drum8: new Howl({src: ['static/audio/loops/drum8.mp3']}),
+				drum7: new Howl({src: ['static/audio/loops/drum7.mp3']}),
+				
+				hi1: new Howl({src: ['static/audio/loops/hi1.mp3']}),
+				hi2: new Howl({src: ['static/audio/loops/hi2.mp3']}),
+				hi3: new Howl({src: ['static/audio/loops/hi3.mp3']}),
+				hi4: new Howl({src: ['static/audio/loops/hi4.mp3']}),
+				hi5: new Howl({src: ['static/audio/loops/hi5.mp3']}),
+						
+				ens1: new Howl({src: ['static/audio/loops/ens1.mp3']}),
+				ens2: new Howl({src: ['static/audio/loops/ens2.mp3']}),
+				ens3: new Howl({src: ['static/audio/loops/ens3.mp3']}),
+				ens4: new Howl({src: ['static/audio/loops/ens4.mp3']}),
+				ens5: new Howl({src: ['static/audio/loops/ens5.mp3']}),
+				ens6: new Howl({src: ['static/audio/loops/ens6.mp3']})
+			}
 
 			var bg = new TimelineMax();
 			// bg.to(this.p1, 16, {width: 4000, height: 4000, ease: Power1.easeIn}, "0")
@@ -160,42 +186,29 @@
 				// Toggle midi btn
 				if ( document.getElementById(event.target.id).classList.contains("midi-btn-active")) {
 					document.getElementById(event.target.id).classList.remove("midi-btn-active");
-					for ( var i = this.tracks.length - 1; i >= 0; i-- ) {
-					    if ( this.tracks[i] === event.target.id ) {
-					       this.tracks.splice(i, 1);
-					    }
-					}
-					console.log(this.tracks);
+						for ( var i = this.tracks.length - 1; i >= 0; i-- ) {
+						    if ( this.tracks[i] === event.target.id ) {
+						       this.tracks.splice(i, 1);
+						    }
+						}
 				} else {
 					document.getElementById(event.target.id).classList.add("midi-btn-active");
 					this.tracks.push(event.target.id);
-					console.log(this.tracks);
 				}
-				
-				// if ( this.playing === false ) {
-				// 	this.play();
-				// }
 
+				// Play & Stop MIDI
 				if ( this.tracks.length > 0 && this.playing === false ) {
 					console.log('play');
-					this.play();
-					//this.playing === false;
+					this.playing = setInterval(this.midi, 60000 / 100);
 				} else if ( this.tracks.length == 0 ) {
 					console.log('stop');
-					this.stop();
-					//this.playing = true;
+					Object.keys(this.playlist).forEach(function(key) {
+					    this.playlist[key].stop();
+					}.bind(this));
+					clearInterval(this.playing);
+					this.playing = false;
+					this.beat = 16;
 				}
-
-			
-			},
-			play() {
-				//console.log('play');
-				this.playing = setInterval(this.midi, 60000 / 100);
-			},
-			stop() {
-				clearInterval(this.playing);
-				this.playing = false;
-				// this.beat = 16;
 			},
 			midi() {
 				console.log(this.beat);
@@ -204,11 +217,7 @@
 				} else {
 					this.beat = 1;
 					for(var i = this.tracks.length - 1; i >= 0; i--) {
-						// console.log(this.tracks[i]);
-						var m = 'm' + i;
-						this.m = null;
-						this.m = new Audio('static/audio/loops/' + this.tracks[i] + '.mp3');
-						this.m.play();
+						this.playlist[this.tracks[i]].play();
 					}
 				}
 			},
