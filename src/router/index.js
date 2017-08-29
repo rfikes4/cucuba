@@ -10,6 +10,9 @@ import Router from 'vue-router'
 // import Decadence from '@/components/Decadence'
 // import Threshold from '@/components/Threshold'
 import Home from '@/components/Home'
+// import PixiRenderer from '@/components/PIXIRenderer.vue'
+// import Sprite from '@/components/PIXISprite.vue'
+// import Container from '@/components/PIXIContainer.vue'
 
 Vue.use(Router)
 // Vue.component('app-nav', Nav)

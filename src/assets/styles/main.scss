@@ -15,7 +15,7 @@ $c1: #f7e9ce; // beige
 $c2: #11182e; // dark blue
 
 body {
-	background-color: $c1;
+	background-color: $c2;
 	color: #fff;
 	margin: 0;
 }
@@ -67,13 +67,14 @@ a {
 }
 
 .midi-pattern {
-	width: 400vh;
-	height: 400vh;
+	width: 40vh;
+	height: 40vh;
 	background-size: 100vh 100vh;
 	position: absolute;
 	transform: rotate(45deg);
 	background-color: white;
 	background-repeat: repeat;
+	// box-shadow: 0 0 6vh 0 rgba(0,0,0,1);
 }
 
 #p1 {
@@ -106,6 +107,7 @@ a {
 
 #p8 {
 	background-image: url('../../assets/images/patterns/pattern8.svg');
+	transform: scale(6);
 }
 
 #midi-container {
@@ -166,59 +168,55 @@ a {
 	box-shadow: 0 0 4vh 0 rgba(255,255,255,1);
 }
 
-#m1 {
+#horn1 {
 	background: linear-gradient(135deg, #f6db01 0%,#d49102 100%);
 }
 
-#m6, #m2 {
+#vocal1, #vocal2 {
 	background: linear-gradient(135deg, #ff9b4c 0%,#fc4728 100%);
 }
 
-#m6, #m2 {
-	background: linear-gradient(135deg, #ff9b4c 0%,#fc4728 100%);
-}
-
-#m11, #m3 {
+#ensb1, #ensb2 {
 	background: linear-gradient(135deg, #bc8180 0%,#9d3d80 100%);
 }
 
-#m7 {
+#horn2 {
 	background: linear-gradient(135deg, #d48c01 0%,#b64601 100%);
 }
 
-#m16, #m4 {
+#drum1, #drum5 {
 	background: linear-gradient(135deg, #ac6f01 0%,#9e3501 100%);
 }
 
-#m12, #m8 {
+#hi1, #hi2 {
 	background: linear-gradient(135deg, #ff2d7d 0%,#df025d 100%);
 }
 
-#m21, #m17, #m9, #m5 {
+#drum4, #drum2, #drum8, #drum6 {
 	background: linear-gradient(135deg, #a34801 0%,#8f2f09 100%);
 }
 
-#m13 {
+#hi3 {
 	background: linear-gradient(135deg, #ef0d6d 0%,#ca015e 100%);
 }
 
-#m22, #m10 {
+#drum3, #drum7 {
 	background: linear-gradient(135deg, #9b3201 0%,#762918 100%);
 }
 
-#m18, #m14 {
+#hi4, #hi5 {
 	background: linear-gradient(135deg, #db015c 0%,#aa0162 100%);
 }
 
-#m23, #m19, #m15 {
+#ens1, #ens2, #ens3 {
 	background: linear-gradient(135deg, #742280 0%,#4d1977 100%);
 }
 
-#m24, #m20 {
+#ens4, #ens5 {
 	background: linear-gradient(135deg, #601c79 0%,#32147c 100%);
 }
 
-#m25 {
+#ens6 {
 	background: linear-gradient(135deg, #481872 0%,#170f84 100%);
 }
 
