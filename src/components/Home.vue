@@ -56,17 +56,6 @@
 </template>
 
 <script>
-// import p5 from 'p5'
-// var pixi = require('pixi');
-// // var Sprite = require('pixi/display/Sprite');
-// var Stage = require('pixi/display/Stage');
-// var Texture = require('pixi/textures/Texture');
-// var WebGLRenderer = require('pixi/renderers/webgl/WebGLRenderer');
-// import PIXI from 'pixi'
-// import {Container} from 'pixi'
-// import {Sprite} from 'pixi'
-// import PIXI from 'pixi'
-// import root from './_root'
 	export default {
 		data() {
 			return {
@@ -80,33 +69,10 @@
 				p8: null,
 				playing: false,
 				beat: 16,
+				oddBeat: null,
 				playlist: {},
 				tracks: [],
-				m0: null,
-				m1: null,
-				m2: null,
-				m3: null,
-				m4: null,
-				m5: null,
-				m6: null,
-				m7: null,
-				m8: null,
-				m9: null,
-				m10: null,
-				m11: null,
-				m12: null,
-				m11: null,
-				m14: null,
-				m15: null,
-				m16: null,
-				m17: null,
-				m18: null,
-				m19: null,
-				m20: null,
-				m21: null,
-				m22: null,
-				m23: null,
-				m24: null,
+				queue: []
 			}
 		},
 		mounted() {
@@ -185,15 +151,23 @@
 			toggle() {
 				// Toggle midi btn
 				if ( document.getElementById(event.target.id).classList.contains("midi-btn-active")) {
-					document.getElementById(event.target.id).classList.remove("midi-btn-active");
+					document.getElementById(event.target.id).classList.remove("midi-btn-active", "midi-q");
+						// Remove Track
 						for ( var i = this.tracks.length - 1; i >= 0; i-- ) {
 						    if ( this.tracks[i] === event.target.id ) {
 						       this.tracks.splice(i, 1);
 						    }
 						}
+						// Remove track from queue
+						for ( var i = this.queue.length - 1; i >= 0; i-- ) {
+						    if ( this.queue[i] === event.target.id ) {
+						       this.queue.splice(i, 1);
+						    }
+						}
 				} else {
 					document.getElementById(event.target.id).classList.add("midi-btn-active");
 					this.tracks.push(event.target.id);
+					this.queue.push(event.target.id);
 				}
 
 				// Play & Stop MIDI
@@ -214,12 +188,34 @@
 				console.log(this.beat);
 				if ( this.beat < 16 ) {
 					this.beat = this.beat + 1;
+					this.oddBeat = this.beat % 2; 
+					for(var i = this.queue.length - 1; i >= 0; i--) {
+						// Queue btn anim
+						console.log(this.queue);
+						if ( this.oddBeat == 1 ){
+							document.getElementById(this.queue[i]).classList.add("midi-q");
+						} else {
+							document.getElementById(this.queue[i]).classList.remove("midi-q");
+						}
+					}
 				} else {
 					this.beat = 1;
 					for(var i = this.tracks.length - 1; i >= 0; i--) {
 						this.playlist[this.tracks[i]].play();
+						this.queue = [];
+						console.log(this.queue);
+						document.getElementById(this.tracks[i]).classList.add("midi-q");
+						// if ( this.oddBeat == 0 ){
+						// 	document.getElementById(this.tracks[i]).classList.add("midi-q");
+						// } else {
+						// 	document.getElementById(this.tracks[i]).classList.remove("midi-q");
+						// }
 					}
 				}
+
+				
+				// var q = new TimelineMax();
+				// q.to(this.p1, 16, {, ease: Power1.easeIn}, "0")
 			},
 			fps() {
 				window.countFPS = (function () {
