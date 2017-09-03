@@ -21,6 +21,14 @@
 				<div id="r1" class="petal" ref="r1"></div>
 				<div id="midi-bg">
 					<div id="midi-bg-inner">
+						<div id="e1" class="eq" ref="e1"></div>
+						<div id="e2" class="eq" ref="e2"></div>
+						<div id="e3" class="eq" ref="e3"></div>
+						<div id="e4" class="eq" ref="e4"></div>
+						<div id="e5" class="eq" ref="e5"></div>
+						<div id="e6" class="eq" ref="e6"></div>
+						<div id="e7" class="eq" ref="e7"></div>
+						<div id="e8" class="eq" ref="e8"></div>
 						<div id="midi-btns">
 							<div id="horn1" class="midi-btn q-horn vQ" @click="toggle"></div>
 							<div id="vocal2" class="midi-btn q-vocal vQ" @click="toggle"></div>
