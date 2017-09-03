@@ -30,6 +30,7 @@
 				<div class="p-container" ref="p9">
 					<div id="p9" class="midi-pattern"></div>
 				</div>
+				<!-- <div class="p-over"></div> -->
 			</div>
 			<div id="midi" ref="m">
 				<div id="l3" class="petal" ref="l3"></div>
@@ -159,7 +160,8 @@
 				oddBeat: null,
 				playlist: {},
 				tracks: [],
-				queue: []
+				queue: [],
+				loop: null
 			}
 		},
 		watch: {
@@ -498,9 +500,11 @@
 					console.log('play');
 					this.playing = setInterval(this.midi, 60000 / 200);
 					// BG anim
+
 					// var bg = new TimelineMax();
 					// var vh = 40 + 'vh';
 					// var vh1 = 400 + 'vh';
+					
 					// this.bg.to(this.p1, 0, {width: vh, height: vh}, "0")
 					// this.bg.to(this.p2, 0, {width: vh, height: vh}, "0")
 					// this.bg.to(this.p3, 0, {width: vh, height: vh}, "0")
@@ -568,6 +572,7 @@
 					clearInterval(this.playing);
 					this.playing = false;
 					this.beat = 32;
+					this.loop = null;
 
 					//BG Anim
 					// this.bg.pause();
@@ -763,51 +768,56 @@
 				var eq = 48 + '%';
 				if ( this.beat == 1 ) {
 					TweenMax.to(this.e1, 0.6, {width: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p1, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					// if ( this.loop != null ) {
+					// 	TweenMax.to(this.p1, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
+					// } else {
+					// 	TweenMax.to(this.p1, 1.2, {width: vh1, height: vh1, ease: Power4.easeOut})
+					// }
+					TweenMax.to(this.p1, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p1, 0, {width: 0, height: 0, delay: "2.4"})
 				} else if ( this.beat == 3 ) {
 					TweenMax.to(this.e2, 0.6, {width: eq, ease: Power3.easeOut});
 				} else if ( this.beat == 5 ) {
 					TweenMax.to(this.e3, 0.6, {height: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p2, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					TweenMax.to(this.p2, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p2, 0, {width: 0, height: 0, delay: "2.4"})
 				} else if ( this.beat == 7 ) {
 					TweenMax.to(this.e4, 0.6, {height: eq, ease: Power3.easeOut});
 				} else if ( this.beat == 9 ) {
 					TweenMax.to(this.e5, 0.6, {width: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p3, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					TweenMax.to(this.p3, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p3, 0, {width: 0, height: 0, delay: "2.4"})
 				} else if ( this.beat == 11 ) {
 					TweenMax.to(this.e6, 0.6, {width: eq, ease: Power3.easeOut});
 				} else if ( this.beat == 13 ) {
 					TweenMax.to(this.e7, 0.6, {height: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p4, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					TweenMax.to(this.p4, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p4, 0, {width: 0, height: 0, delay: "2.4"})
 				} else if ( this.beat == 15 ) {
 					TweenMax.to(this.e8, 0.6, {height: eq, ease: Power3.easeOut});
 				} else if ( this.beat == 17 ) {
 					TweenMax.to(this.e1a, 0.6, {width: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p5, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					TweenMax.to(this.p5, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p5, 0, {width: 0, height: 0, delay: "2.4"})
 				} else if ( this.beat == 19 ) {
 					TweenMax.to(this.e2a, 0.6, {width: eq, ease: Power3.easeOut});
 				} else if ( this.beat == 21 ) {
 					TweenMax.to(this.e3a, 0.6, {height: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p6, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					TweenMax.to(this.p6, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p6, 0, {width: 0, height: 0, delay: "2.4"})
 				} else if ( this.beat == 23 ) {
 					TweenMax.to(this.e4a, 0.6, {height: eq, ease: Power3.easeOut});
 				} else if ( this.beat == 25 ) {
 					TweenMax.to(this.e5a, 0.6, {width: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p7, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					TweenMax.to(this.p7, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p7, 0, {width: 0, height: 0, delay: "2.4"})
 				} else if ( this.beat == 27 ) {
 					TweenMax.to(this.e6a, 0.6, {width: eq, ease: Power3.easeOut});
 				} else if ( this.beat == 29 ) {
 					TweenMax.to(this.e7a, 0.6, {height: eq, ease: Power3.easeOut});
-					TweenMax.to(this.p8, .6, {width: vh1, height: vh1, ease: Power4.easeOut})
+					TweenMax.to(this.p8, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut})
 					TweenMax.to(this.p8, 0, {width: 0, height: 0, delay: "1.8"})
-					TweenMax.to(this.p9, .6, {width: vh1, height: vh1, ease: Power4.easeOut, delay: "1.2"})
+					TweenMax.to(this.p9, 2.4, {width: vh1, height: vh1, ease: Power4.easeOut, delay: "1.2"})
 					TweenMax.to(this.p9, 0, {width: 0, height: 0, delay: "1.8"})
 				} else if ( this.beat == 31 ) {
 					TweenMax.to(this.e8a, 0.6, {height: eq, ease: Power3.easeOut});
@@ -828,6 +838,8 @@
 					TweenMax.to(this.e6a, 0, {width: 0});
 					TweenMax.to(this.e7a, 0, {height: 0});
 					TweenMax.to(this.e8a, 0, {height: 0});
+
+					this.loop = 1;
 				}
 
 			},

@@ -66,6 +66,13 @@ a {
     overflow: hidden;
 }
 
+.p-over {
+	width: 100%;
+	height: 100%;
+	background: $c2;
+	opacity: 0.5;
+}
+
 .p-container {
 	// width: 80vh;
 	// height: 80vh;
@@ -91,18 +98,19 @@ a {
 	background-color: white;
 	background-repeat: repeat;
 	// box-shadow: 0 0 6vh 0 rgba(0,0,0,1);
-	// animation: pattern 14.4s linear infinite;
+	// animation: pattern 4.8s linear infinite;
+	// background-position: center center;
 	// background-attachment: fixed;
 }
 
-// @keyframes pattern {
-// 	from {
-// 		transform: rotate(0deg);
-// 	}
-// 	to {
-// 		transform: rotate(90deg);
-// 	}
-// }
+@keyframes pattern {
+	from {
+		background-size: 400px 400px;
+	}
+	to {
+		background-size: 300px 300px;
+	}
+}
 
 #p1, #p9 {
 	background-image: url('../../assets/images/patterns/pattern1.jpg');
@@ -403,7 +411,7 @@ a {
 	background-size: contain;
 	position: absolute;
 	// filter: drop-shadow(0 0 2vh rgba(0, 0, 0, 1));
-	// filter: drop-shadow(0 0 3vh #043506);
+	filter: drop-shadow(0 0 3vh #043506);
 }
 
 #l1 {
