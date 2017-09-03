@@ -249,6 +249,7 @@ a {
     left: -200px;
     width: 50vh;
 	height: 50vh;
+	transform-origin: 100% 100%;
 }
 
 #l2 {
@@ -257,6 +258,7 @@ a {
     left: -320px;
     width: 63vh;
     height: 63vh;
+    transform-origin: 100% 100%;
 }
 
 #l3 {
@@ -265,6 +267,7 @@ a {
     left: -248px;
     width: 67vh;
     height: 37vh;
+    transform-origin: 100% 100%;
 }
 
 #r1 {
@@ -273,6 +276,7 @@ a {
     left: 70px;
     width: 60vh;
     height: 60vh;
+
 }
 
 #r2 {
