@@ -154,15 +154,15 @@ a {
 #e1 {
 	top: 2%;
 	left: 2%;
-	width: 48%;
+	width: 0%;
 	height: 1%;
 	background: linear-gradient(135deg, #ffdf00 0%,#ff7000 100%);
 }
 
 #e2 {
 	top: 2%;
-	right: 2%;
-	width: 48%;
+	left: 50%;
+	width: 0%;
 	height: 1%;
 	background: linear-gradient(135deg, #ff7000 0%,#ff0200 100%);
 }
@@ -171,30 +171,30 @@ a {
 	top: 2%;
 	right: 2%;
 	width: 1%;
-	height: 48%;
+	height: 0%;
 	background: linear-gradient(135deg, #ff0200 0%,#94004e 100%);
 }
 
 #e4 {
-	bottom: 2%;
+	top: 50%;
 	right: 2%;
 	width: 1%;
-	height: 48%;
+	height: 0%;
 	background: linear-gradient(135deg, #94004e 0%,#28009c 100%);
 }
 
 #e5 {
 	bottom: 2%;
 	right: 2%;
-	width: 48%;
+	width: 0%;
 	height: 1%;
 	background: linear-gradient(-135deg, #28009c 0%,#94004e 100%);
 }
 
 #e6 {
 	bottom: 2%;
-	left: 2%;
-	width: 48%;
+	right: 50%;
+	width: 0%;
 	height: 1%;
 	background: linear-gradient(-135deg, #94004e 0%,#ff0200 100%);
 }
@@ -203,16 +203,80 @@ a {
 	bottom: 2%;
 	left: 2%;
 	width: 1%;
-	height: 48%;
+	height: 0%;
 	background: linear-gradient(135deg, #ff7000 0%,#ff0200 100%);
 }
 
 #e8 {
-	top: 2%;
+	bottom: 50%;
 	left: 2%;
 	width: 1%;
-	height: 48%;
+	height: 0%;
 	background: linear-gradient(135deg, #ffdf00 0%,#ff7000 100%);
+}
+
+#e1a {
+	top: 2%;
+	left: 2%;
+	width: 0%;
+	height: 1%;
+	background: $c2;
+}
+
+#e2a {
+	top: 2%;
+	left: 50%;
+	width: 0%;
+	height: 1%;
+	background: $c2;
+}
+
+#e3a {
+	top: 2%;
+	right: 2%;
+	width: 1%;
+	height: 0%;
+	background: $c2;
+}
+
+#e4a {
+	top: 50%;
+	right: 2%;
+	width: 1%;
+	height: 0%;
+	background: $c2;
+}
+
+#e5a {
+	bottom: 2%;
+	right: 2%;
+	width: 0%;
+	height: 1%;
+	background: $c2;
+}
+
+#e6a {
+	bottom: 2%;
+	right: 50%;
+	width: 0%;
+	height: 1%;
+	background: $c2;
+}
+
+#e7a {
+	bottom: 2%;
+	left: 2%;
+	width: 1%;
+	height: 0%;
+	background: $c2;
+}
+
+#e8a {
+	bottom: 50%;
+	left: 2%;
+	width: 1%;
+	height: 0%;
+	background: $c2;
 }
 
 #midi-btns {
@@ -309,7 +373,7 @@ a {
 	background-size: contain;
 	position: absolute;
 	// filter: drop-shadow(0 0 2vh rgba(0, 0, 0, 1));
-	filter: drop-shadow(0 0 3vh #043506);
+	// filter: drop-shadow(0 0 3vh #043506);
 }
 
 #l1 {

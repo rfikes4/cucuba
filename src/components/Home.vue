@@ -29,6 +29,14 @@
 						<div id="e6" class="eq" ref="e6"></div>
 						<div id="e7" class="eq" ref="e7"></div>
 						<div id="e8" class="eq" ref="e8"></div>
+						<div id="e1a" class="eq" ref="e1a"></div>
+						<div id="e2a" class="eq" ref="e2a"></div>
+						<div id="e3a" class="eq" ref="e3a"></div>
+						<div id="e4a" class="eq" ref="e4a"></div>
+						<div id="e5a" class="eq" ref="e5a"></div>
+						<div id="e6a" class="eq" ref="e6a"></div>
+						<div id="e7a" class="eq" ref="e7a"></div>
+						<div id="e8a" class="eq" ref="e8a"></div>
 						<div id="midi-btns">
 							<div id="horn1" class="midi-btn q-horn vQ" @click="toggle"></div>
 							<div id="vocal2" class="midi-btn q-vocal vQ" @click="toggle"></div>
@@ -81,6 +89,22 @@
 				r1: null,
 				r2: null,
 				r3: null,
+				e1: null,
+				e2: null,
+				e3: null,
+				e4: null,
+				e5: null,
+				e6: null,
+				e7: null,
+				e8: null,
+				e1a: null,
+				e2a: null,
+				e3a: null,
+				e4a: null,
+				e5a: null,
+				e6a: null,
+				e7a: null,
+				e8a: null,
 				playing: false,
 				beat: 32,
 				oddBeat: null,
@@ -108,6 +132,23 @@
 			this.r1 = this.$refs.r1;
 			this.r2 = this.$refs.r2;
 			this.r3 = this.$refs.r3;
+
+			this.e1 = this.$refs.e1;
+			this.e2 = this.$refs.e2;
+			this.e3 = this.$refs.e3;
+			this.e4 = this.$refs.e4;
+			this.e5 = this.$refs.e5;
+			this.e6 = this.$refs.e6;
+			this.e7 = this.$refs.e7;
+			this.e8 = this.$refs.e8;
+			this.e1a = this.$refs.e1a;
+			this.e2a = this.$refs.e2a;
+			this.e3a = this.$refs.e3a;
+			this.e4a = this.$refs.e4a;
+			this.e5a = this.$refs.e5a;
+			this.e6a = this.$refs.e6a;
+			this.e7a = this.$refs.e7a;
+			this.e8a = this.$refs.e8a;
 
 			this.playlist = {
 				horn1: new Howl({src: ['static/audio/loops/horn1.mp3']}),
@@ -339,10 +380,27 @@
 					TweenMax.to(this.r1, 0.6, {scale: 1, ease: Power1.easeOut});
 					TweenMax.to(this.r2, 0.6, {scale: 1, ease: Power1.easeOut});
 					TweenMax.to(this.r3, 0.6, {scale: 1, ease: Power1.easeOut});
+					// EQ
+					TweenMax.to(this.e1, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e2, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e3, 0.6, {height: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e4, 0.6, {height: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e5, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e6, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e7, 0.6, {height: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e8, 0.6, {height: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e1a, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e2a, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e3a, 0.6, {height: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e4a, 0.6, {height: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e5a, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e6a, 0.6, {width: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e7a, 0.6, {height: 0, ease: Power3.easeOut});
+					TweenMax.to(this.e8a, 0.6, {height: 0, ease: Power3.easeOut});
 				}
 			},
 			midi() {
-				// console.log(this.beat);
+				console.log(this.beat);
 				if ( this.beat < 32 ) {
 					this.beat = this.beat + 1;
 
@@ -480,6 +538,60 @@
 						document.getElementById(this.tracks[i]).classList.add("midi-q", "midi-btn-active");
 					}
 				}
+
+				// Equalizer
+				var eq = 48 + '%';
+				if ( this.beat == 1 ) {
+					TweenMax.to(this.e1, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 3 ) {
+					TweenMax.to(this.e2, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 5 ) {
+					TweenMax.to(this.e3, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 7 ) {
+					TweenMax.to(this.e4, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 9 ) {
+					TweenMax.to(this.e5, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 11 ) {
+					TweenMax.to(this.e6, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 13 ) {
+					TweenMax.to(this.e7, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 15 ) {
+					TweenMax.to(this.e8, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 17 ) {
+					TweenMax.to(this.e1a, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 19 ) {
+					TweenMax.to(this.e2a, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 21 ) {
+					TweenMax.to(this.e3a, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 23 ) {
+					TweenMax.to(this.e4a, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 25 ) {
+					TweenMax.to(this.e5a, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 27 ) {
+					TweenMax.to(this.e6a, 0.6, {width: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 29 ) {
+					TweenMax.to(this.e7a, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 31 ) {
+					TweenMax.to(this.e8a, 0.6, {height: eq, ease: Power3.easeOut});
+				} else if ( this.beat == 32 ) {
+					TweenMax.to(this.e1, 0, {width: 0});
+					TweenMax.to(this.e2, 0, {width: 0});
+					TweenMax.to(this.e3, 0, {height: 0});
+					TweenMax.to(this.e4, 0, {height: 0});
+					TweenMax.to(this.e5, 0, {width: 0});
+					TweenMax.to(this.e6, 0, {width: 0});
+					TweenMax.to(this.e7, 0, {height: 0});
+					TweenMax.to(this.e8, 0, {height: 0});
+					TweenMax.to(this.e1a, 0, {width: 0});
+					TweenMax.to(this.e2a, 0, {width: 0});
+					TweenMax.to(this.e3a, 0, {height: 0});
+					TweenMax.to(this.e4a, 0, {height: 0});
+					TweenMax.to(this.e5a, 0, {width: 0});
+					TweenMax.to(this.e6a, 0, {width: 0});
+					TweenMax.to(this.e7a, 0, {height: 0});
+					TweenMax.to(this.e8a, 0, {height: 0});
+				}
+
 			},
 			fps() {
 				window.countFPS = (function () {
