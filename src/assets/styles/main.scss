@@ -66,48 +66,74 @@ a {
     overflow: hidden;
 }
 
-.midi-pattern {
+.p-container {
 	width: 40vh;
 	height: 40vh;
-	background-size: 100vh 100vh;
+	width: 0;
+	height: 0;
+	transform-origin: center;
 	position: absolute;
+	display: inline-block;
 	transform: rotate(45deg);
+	// overflow: hidden;
+}
+
+.midi-pattern {
+	// width: 40vh;
+	// height: 40vh;
+	width: 100%;
+	height: 100%;
+	// background-size: 100vh 100vh;
+	transform-origin: center;
+	position: absolute;
+	// transform: rotate(45deg);
 	background-color: white;
 	background-repeat: repeat;
 	// box-shadow: 0 0 6vh 0 rgba(0,0,0,1);
+	// animation: pattern 14.4s linear infinite;
+	background-attachment: fixed;
 }
 
+// @keyframes pattern {
+// 	from {
+// 		transform: rotate(0deg);
+// 	}
+// 	to {
+// 		transform: rotate(90deg);
+// 	}
+// }
+
 #p1 {
-	background-image: url('../../assets/images/patterns/pattern1.svg');
+	background-image: url('../../assets/images/patterns/pattern1.jpg');
 }
 
 #p2 {
-	background-image: url('../../assets/images/patterns/pattern2.svg');
+	background-image: url('../../assets/images/patterns/pattern2.jpg');
 }
 
 #p3 {
-	background-image: url('../../assets/images/patterns/pattern3.svg');
+	background-image: url('../../assets/images/patterns/pattern3.jpg');
 }
 
 #p4 {
-	background-image: url('../../assets/images/patterns/pattern4.svg');
+	background-image: url('../../assets/images/patterns/pattern4.jpg');
 }
 
 #p5 {
-	background-image: url('../../assets/images/patterns/pattern5.svg');
+	background-image: url('../../assets/images/patterns/pattern5.jpg');
 }
 
 #p6 {
-	background-image: url('../../assets/images/patterns/pattern6.svg');
+	background-image: url('../../assets/images/patterns/pattern6.jpg');
 }
 
 #p7 {
-	background-image: url('../../assets/images/patterns/pattern7.svg');
+	background-image: url('../../assets/images/patterns/pattern7.jpg');
 }
 
 #p8 {
-	background-image: url('../../assets/images/patterns/pattern8.svg');
-	transform: scale(6);
+	background-image: url('../../assets/images/patterns/pattern8.jpg');
+	// transform: scale(6);
 }
 
 #midi-container {
@@ -121,6 +147,7 @@ a {
 
 #midi {
 	position: relative;
+	transform: scale(0);
 }
 
 #midi-bg {
@@ -295,6 +322,8 @@ a {
 	height: 17.5%;
     width: 17.5%;
     box-shadow: 0 0 0.5vh 0 rgba(0,0,0,1);
+    transform: scale(0);
+    transform-origin: 50% 50%;
     &::after {
     	content: "";
     	position: absolute;
@@ -382,7 +411,8 @@ a {
     left: -200px;
     width: 50vh;
 	height: 50vh;
-	transform-origin: 100% 100%;
+	// transform-origin: 100% 100%;
+	transform: scale(0);
 }
 
 #l2 {
@@ -391,7 +421,8 @@ a {
     left: -320px;
     width: 63vh;
     height: 63vh;
-    transform-origin: 100% 100%;
+    // transform-origin: 100% 100%;
+    transform: scale(0);
 }
 
 #l3 {
@@ -400,7 +431,8 @@ a {
     left: -248px;
     width: 67vh;
     height: 37vh;
-    transform-origin: 100% 100%;
+    // transform-origin: 100% 100%;
+    transform: scale(0);
 }
 
 #r1 {
@@ -409,7 +441,7 @@ a {
     left: 70px;
     width: 60vh;
     height: 60vh;
-
+	transform: scale(0);
 }
 
 #r2 {
@@ -418,6 +450,7 @@ a {
     left: 160px;
     width: 63vh;
     height: 63vh;
+    transform: scale(0);
 }
 
 #r3 {
@@ -426,6 +459,7 @@ a {
     left: 68px;
     width: 65vh;
     height: 45vh;
+    transform: scale(0);
 }
 
 
