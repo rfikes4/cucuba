@@ -71,6 +71,17 @@ a {
 	height: 100%;
 	background: $c2;
 	opacity: 0.5;
+	animation: hue-rotate 20s linear infinite;
+	mix-blend-mode: screen;
+}
+
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .p-container {
@@ -98,51 +109,71 @@ a {
 	background-color: white;
 	background-repeat: repeat;
 	// box-shadow: 0 0 6vh 0 rgba(0,0,0,1);
-	// animation: pattern 4.8s linear infinite;
-	// background-position: center center;
+	// animation: pattern 2.4s linear infinite;
+	background-position: center center;
 	// background-attachment: fixed;
 }
 
-@keyframes pattern {
+@keyframes patternX {
 	from {
-		background-size: 400px 400px;
+		// background-size: 400px 400px;
+		transform: rotate(0deg);
 	}
 	to {
-		background-size: 300px 300px;
+		// background-size: 300px 300px;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes patternY {
+	from {
+		// background-size: 400px 400px;
+		transform: rotate(0deg);
+	}
+	to {
+		// background-size: 300px 300px;
+		transform: rotate(-360deg);
 	}
 }
 
 #p1, #p9 {
 	background-image: url('../../assets/images/patterns/pattern1.jpg');
+	animation: patternX 200s linear infinite;
 }
 
 #p2 {
 	background-image: url('../../assets/images/patterns/pattern2.jpg');
+	animation: patternY 200s linear infinite;
 }
 
 #p3 {
 	background-image: url('../../assets/images/patterns/pattern3.jpg');
+	animation: patternX 200s linear infinite;
 }
 
 #p4 {
 	background-image: url('../../assets/images/patterns/pattern4.jpg');
+	animation: patternY 200s linear infinite;
 }
 
 #p5 {
 	background-image: url('../../assets/images/patterns/pattern5.jpg');
+	animation: patternX 200s linear infinite;
 }
 
 #p6 {
 	background-image: url('../../assets/images/patterns/pattern6.jpg');
+	animation: patternY 200s linear infinite;
 }
 
 #p7 {
 	background-image: url('../../assets/images/patterns/pattern7.jpg');
+	animation: patternX 200s linear infinite;
 }
 
 #p8 {
 	background-image: url('../../assets/images/patterns/pattern8.jpg');
-	// transform: scale(6);
+	animation: patternY 200s linear infinite;
 }
 
 #midi-container {
