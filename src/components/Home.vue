@@ -39,6 +39,15 @@
 				<div id="r3" class="petal" ref="r3"></div>
 				<div id="r2" class="petal" ref="r2"></div>
 				<div id="r1" class="petal" ref="r1"></div>
+				
+				<div id="ls3" class="s-leaf" @click="sub"></div>
+				<div id="ls2" class="s-leaf" @click="sub"></div>
+				<div id="ls1" class="s-leaf" @click="sub"></div>
+				
+				<div id="rs3" class="s-leaf" @click="sub"></div>
+				<div id="rs2" class="s-leaf" @click="sub"></div>
+				<div id="rs1" class="s-leaf" @click="sub"></div>
+
 				<div id="midi-bg" ref="m1">
 					<div id="midi-bg-inner" ref="m2">
 						<div id="e1" class="eq" ref="e1"></div>
@@ -88,6 +97,10 @@
 				</div>
 			</div>
 		</div>
+
+		<transition :duration="{ enter:enter, leave:leave }" mode="out-in">
+    		<router-view></router-view>
+    	</transition>
 	</section>
 </template>
 
@@ -95,7 +108,8 @@
 	export default {
 		data() {
 			return {
-				// bg: null,
+				enter: 0,
+      			leave: 1000,
 				p1: null,
 				p2: null,
 				p3: null,
@@ -165,7 +179,11 @@
 			}
 		},
 		watch: {
-
+			'$route' (to, from) {
+		      if ( this.$route.path == '/' ){
+		      	this.animIn();
+		      }
+		    }
 		},
 		mounted() {
 			// this.bg = new TimelineMax({repeat: -1});
@@ -275,6 +293,7 @@
 				var a = new TimelineMax();
 				a.to(this.m, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0")
 
+				// Leafs
 				a.to(this.l1, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.6")
 				a.to(this.r1, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.7")
 				a.to(this.l2, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.8")
@@ -282,10 +301,8 @@
 				a.to(this.l3, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "1.0")
 				a.to(this.r3, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "1.1")
 
-				// a.to(this.l1, 0, {transformOrigin: '100% 100%'}, "3.0")
-				// a.to(this.l2, 0, {transformOrigin: '100% 100%'}, "3.2")
-				// a.to(this.l3, 0, {transformOrigin: '100% 100%'}, "3.6")
 
+				// Buttons
 				a.to(this.b13, .6, {scale: 1, ease: Power3.easeOut}, "0")
 				a.to(this.b8, .6, {scale: 1, ease: Power3.easeOut}, "0.1")
 				a.to(this.b9, .6, {scale: 1, ease: Power3.easeOut}, "0.2")
@@ -312,45 +329,13 @@
 				a.to(this.b6, .6, {scale: 1, ease: Power3.easeOut}, "2.3")
 				a.to(this.b1, .6, {scale: 1, ease: Power3.easeOut}, "2.4")
 
+				// Leafs wave
 				TweenMax.to(this.l1, 4.8, {rotation: 7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 0});
 				TweenMax.to(this.r1, 4.8, {rotation: -7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 0.6});
 				TweenMax.to(this.l2, 4.8, {rotation: 7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 1.2});
 				TweenMax.to(this.r2, 4.8, {rotation: -7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 1.8});
 				TweenMax.to(this.l3, 4.8, {rotation: 7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 2.4});
 				TweenMax.to(this.r3, 4.8, {rotation: -7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 3.0});
-				
-				
-				
-
-				// a.to(t)
-
-				// var bg = new TimelineMax();
-				// var vh = 300 + 'vh';
-				// bg.to(this.p1, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "0")
-				// bg.to(this.p2, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "4.8")
-				// bg.to(this.p3, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "9.6")
-				// bg.to(this.p4, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "14.4")
-				// bg.to(this.p5, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "19.2")
-				// bg.to(this.p6, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "24")
-				// bg.to(this.p7, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "28.8")
-				// bg.to(this.p8, 14.4, {width: vh, height: vh, ease: Power1.easeIn}, "33.6")
-
-				// bg.to(this.p1, 19.2, {scale: 6, ease: Power4.easeOut}, "0")
-				// // bg.to(this.p1, 0, {scale: 1}, "9.6")
-				// bg.to(this.p2, 19.2, {scale: 6, ease: Power4.easeOut}, "2.4")
-				// // bg.to(this.p2, 0, {scale: 1}, "9.6")
-				// bg.to(this.p3, 19.2, {scale: 6, ease: Power4.easeOut}, "4.8")
-				// // bg.to(this.p3, 0, {scale: 1}, "12")
-				// bg.to(this.p4, 19.2, {scale: 6, ease: Power4.easeOut}, "7.2")
-				// // bg.to(this.p4, 0, {scale: 1}, "14.4")
-				// bg.to(this.p5, 19.2, {scale: 6, ease: Power4.easeOut}, "9.6")
-				// // bg.to(this.p5, 0, {scale: 1}, "16.8")
-				// bg.to(this.p6, 19.2, {scale: 6, ease: Power4.easeOut}, "12")
-				// // bg.to(this.p6, 0, {scale: 1}, "19.2")
-				// bg.to(this.p7, 19.2, {scale: 6, ease: Power4.easeOut}, "14.4")
-				// // bg.to(this.p7, 0, {scale: 1}, "21.6")
-				// bg.to(this.p8, 19.2, {scale: 6, ease: Power4.easeOut}, "16.8")
-				// // bg.to(this.p8, 0, {scale: 1}, "24")
 			},
 			toggle() {
 				var btn = document.getElementById(event.target.id);
@@ -497,121 +482,71 @@
 
 				// Play & Stop MIDI
 				if ( this.queue.length > 0 && this.playing === false ) {
-					console.log('play');
-					this.playing = setInterval(this.midi, 60000 / 200);
-					// BG anim
-
-					// var bg = new TimelineMax();
-					// var vh = 40 + 'vh';
-					// var vh1 = 400 + 'vh';
-					
-					// this.bg.to(this.p1, 0, {width: vh, height: vh}, "0")
-					// this.bg.to(this.p2, 0, {width: vh, height: vh}, "0")
-					// this.bg.to(this.p3, 0, {width: vh, height: vh}, "0")
-					// this.bg.to(this.p4, 0, {width: vh, height: vh}, "0")
-					// this.bg.to(this.p5, 0, {width: vh, height: vh}, "0")
-					// this.bg.to(this.p6, 0, {width: vh, height: vh}, "0")
-					// this.bg.to(this.p7, 0, {width: vh, height: vh}, "0")
-					// this.bg.to(this.p8, 0, {width: vh, height: vh}, "0")
-
-					// this.bg.to(this.p1, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "0")
-					// bg.to(this.p1, 0, {width: vh, height: vh}, "9.6")
-					// this.bg.to(this.p2, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "4.8")
-					// bg.to(this.p2, 0, {width: vh, height: vh}, "14.4")
-					// this.bg.to(this.p3, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "9.6")
-					// bg.to(this.p3, 0, {width: vh, height: vh}, "19.2")
-					// this.bg.to(this.p4, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "14.4")
-					// bg.to(this.p4, 0, {width: vh, height: vh}, "24")
-					// this.bg.to(this.p5, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "19.2")
-					// bg.to(this.p5, 0, {width: vh, height: vh}, "28.8")
-					// this.bg.to(this.p6, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "24")
-					// bg.to(this.p6, 0, {width: vh, height: vh}, "33.6")
-					// this.bg.to(this.p7, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "28.8")
-					// bg.to(this.p7, 0, {width: vh, height: vh}, "38.4")
-					// this.bg.to(this.p8, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "33.6")
-					// bg.to(this.p8, 0, {width: vh, height: vh}, "43.2")
-					// this.bg.to(this.p1, .6, {width: vh1, height: vh1, ease: Power4.easeOut}, "38.6")
-					
-					// bg.to(this.p1, 19.2, {scale: 6, ease: Power4.easeOut}, "0")
-					// // bg.to(this.p1, 0, {scale: 1}, "9.6")
-					// bg.to(this.p2, 19.2, {scale: 6, ease: Power4.easeOut}, "2.4")
-					// // bg.to(this.p2, 0, {scale: 1}, "9.6")
-					// bg.to(this.p3, 19.2, {scale: 6, ease: Power4.easeOut}, "4.8")
-					// // bg.to(this.p3, 0, {scale: 1}, "12")
-					// bg.to(this.p4, 19.2, {scale: 6, ease: Power4.easeOut}, "7.2")
-					// // bg.to(this.p4, 0, {scale: 1}, "14.4")
-					// bg.to(this.p5, 19.2, {scale: 6, ease: Power4.easeOut}, "9.6")
-					// // bg.to(this.p5, 0, {scale: 1}, "16.8")
-					// bg.to(this.p6, 19.2, {scale: 6, ease: Power4.easeOut}, "12")
-					// // bg.to(this.p6, 0, {scale: 1}, "19.2")
-					// bg.to(this.p7, 19.2, {scale: 6, ease: Power4.easeOut}, "14.4")
-					// // bg.to(this.p7, 0, {scale: 1}, "21.6")
-					// bg.to(this.p8, 19.2, {scale: 6, ease: Power4.easeOut}, "16.8")
-					// // bg.to(this.p8, 0, {scale: 1}, "24")
-
-					
-
-					// bg.to(this.p1, 19.2, {scale: 6, ease: Power4.easeOut}, "0")
-					// // bg.to(this.p1, 0, {scale: 1}, "9.6")
-					// bg.to(this.p2, 19.2, {scale: 6, ease: Power4.easeOut}, "2.4")
-					// // bg.to(this.p2, 0, {scale: 1}, "9.6")
-					// bg.to(this.p3, 19.2, {scale: 6, ease: Power4.easeOut}, "4.8")
-					// // bg.to(this.p3, 0, {scale: 1}, "12")
-					// bg.to(this.p4, 19.2, {scale: 6, ease: Power4.easeOut}, "7.2")
-					// // bg.to(this.p4, 0, {scale: 1}, "14.4")
-					// bg.to(this.p5, 19.2, {scale: 6, ease: Power4.easeOut}, "9.6")
-					// // bg.to(this.p5, 0, {scale: 1}, "16.8")
-					// bg.to(this.p6, 19.2, {scale: 6, ease: Power4.easeOut}, "12")
-					// // bg.to(this.p6, 0, {scale: 1}, "19.2")
-					// bg.to(this.p7, 19.2, {scale: 6, ease: Power4.easeOut}, "14.4")
-					// // bg.to(this.p7, 0, {scale: 1}, "21.6")
-					// bg.to(this.p8, 19.2, {scale: 6, ease: Power4.easeOut}, "16.8")
-					// // bg.to(this.p8, 0, {scale: 1}, "24")
+					this.play();
 				} else if ( this.tracks.length == 0 && this.queue.length == 0 ) {
-					console.log('stop');
-					clearInterval(this.playing);
-					this.playing = false;
-					this.beat = 32;
-					this.loop = null;
-
-					//BG Anim
-					// this.bg.pause();
-					// this.bg = new TimelineMax({repeat: -1});
-					TweenMax.to(this.p1, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p2, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p3, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p4, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p5, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p6, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p7, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p8, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-					TweenMax.to(this.p9, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
-
-					// Leafs anim
-					TweenMax.to(this.l1, 0.6, {scale: 1, ease: Power1.easeOut});
-					TweenMax.to(this.l2, 0.6, {scale: 1, ease: Power1.easeOut});
-					TweenMax.to(this.l3, 0.6, {scale: 1, ease: Power1.easeOut});
-					TweenMax.to(this.r1, 0.6, {scale: 1, ease: Power1.easeOut});
-					TweenMax.to(this.r2, 0.6, {scale: 1, ease: Power1.easeOut});
-					TweenMax.to(this.r3, 0.6, {scale: 1, ease: Power1.easeOut});
-					// EQ
-					TweenMax.to(this.e1, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e2, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e3, 0.6, {height: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e4, 0.6, {height: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e5, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e6, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e7, 0.6, {height: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e8, 0.6, {height: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e1a, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e2a, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e3a, 0.6, {height: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e4a, 0.6, {height: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e5a, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e6a, 0.6, {width: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e7a, 0.6, {height: 0, ease: Power3.easeOut});
-					TweenMax.to(this.e8a, 0.6, {height: 0, ease: Power3.easeOut});
+					this.stop();
 				}
+			},
+			play() {
+				console.log('play');
+				this.playing = setInterval(this.midi, 60000 / 200);
+			},
+			stop() {
+				console.log('stop');
+				clearInterval(this.playing);
+				this.playing = false;
+				this.beat = 32;
+				this.loop = null;
+
+				document.querySelectorAll(".midi-btn").forEach(function(e) {
+						e.classList.remove("midi-btn-active", "midi-q", "mq");
+
+				});
+
+				// Remove and stop track
+				for ( var i = this.tracks.length - 1; i >= 0; i-- ) {
+					this.playlist[this.tracks[i]].stop();
+					this.tracks.splice(i, 1);
+				}
+
+				//BG Anim
+				// this.bg.pause();
+				// this.bg = new TimelineMax({repeat: -1});
+				TweenMax.to(this.p1, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p2, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p3, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p4, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p5, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p6, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p7, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p8, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+				TweenMax.to(this.p9, 0.6, {width: 0, height: 0, ease: Power3.easeOut})
+
+				// Leafs anim
+				TweenMax.to(this.l1, 0.6, {scale: 1, ease: Power1.easeOut});
+				TweenMax.to(this.l2, 0.6, {scale: 1, ease: Power1.easeOut});
+				TweenMax.to(this.l3, 0.6, {scale: 1, ease: Power1.easeOut});
+				TweenMax.to(this.r1, 0.6, {scale: 1, ease: Power1.easeOut});
+				TweenMax.to(this.r2, 0.6, {scale: 1, ease: Power1.easeOut});
+				TweenMax.to(this.r3, 0.6, {scale: 1, ease: Power1.easeOut});
+				
+				// EQ
+				TweenMax.to(this.e1, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e2, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e3, 0.6, {height: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e4, 0.6, {height: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e5, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e6, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e7, 0.6, {height: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e8, 0.6, {height: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e1a, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e2a, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e3a, 0.6, {height: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e4a, 0.6, {height: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e5a, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e6a, 0.6, {width: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e7a, 0.6, {height: 0, ease: Power3.easeOut});
+				TweenMax.to(this.e8a, 0.6, {height: 0, ease: Power3.easeOut});
 			},
 			midi() {
 				// console.log(this.beat);
@@ -833,6 +768,70 @@
 					this.loop = 1;
 				}
 
+			},
+			sub(event) {
+				this.stop();
+
+				var a = new TimelineMax();
+				a.to(this.m, .6, {scale: 6, ease: Power4.easeIn}, ".3")
+				a.to(this.m, 0, {scale: 0}, ".9")
+
+				// // Leafs
+				// a.to(this.l1, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.6")
+				// a.to(this.r1, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.7")
+				// a.to(this.l2, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.8")
+				// a.to(this.r2, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.9")
+				// a.to(this.l3, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "1.0")
+				// a.to(this.r3, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "1.1")
+
+
+				// // Buttons
+				a.to(this.b13, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+				a.to(this.b7, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b8, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b9, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b12, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b14, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b17, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b18, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b19, 0.6, {scale: 0, ease: Power3.easeOut}, "0.1")
+				a.to(this.b1, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b2, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b3, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b4, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b5, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b6, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b10, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b11, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b15, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b16, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b20, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b21, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b22, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b23, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b24, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+				a.to(this.b25, 0.6, {scale: 0, ease: Power3.easeOut}, "0.2")
+
+				if ( event.target.id == "ls1" ){
+					this.$router.push('/bella');
+					a.to(this.l1, 0.3, {scale: 1.15, ease: Power3.easeOut}, "0")
+					a.to(this.l1, 0.3, {scale: 0, ease: Power3.easeIn}, "0.3")
+					a.to(this.l2, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.l3, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.r1, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.r2, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.r3, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+				} else if ( event.target.id == "ls2" ){
+					console.log('ls2');
+				} else if ( event.target.id == "ls3" ){
+					console.log('ls3');
+				} else if ( event.target.id == "rs1" ){
+					console.log('rs1');
+				} else if ( event.target.id == "rs2" ){
+					console.log('rs2');
+				} else if ( event.target.id == "rs3" ){
+					console.log('rs3');
+				}
 			},
 			fps() {
 				window.countFPS = (function () {

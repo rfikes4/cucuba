@@ -10,6 +10,7 @@ import Router from 'vue-router'
 // import Decadence from '@/components/Decadence'
 // import Threshold from '@/components/Threshold'
 import Home from '@/components/Home'
+import Bella from '@/components/Bella'
 // import PixiRenderer from '@/components/PIXIRenderer.vue'
 // import Sprite from '@/components/PIXISprite.vue'
 // import Container from '@/components/PIXIContainer.vue'
@@ -22,7 +23,13 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      children: [
+        {
+            path: '/bella',
+            component: Bella
+        }
+      ]
     },
     // {
     //   path: '/urban',
