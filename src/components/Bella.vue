@@ -15,7 +15,9 @@
 				<div class="bio-text">
 					<p>Hello! I’m Isabella Sandoval and I’m currently in my last semester in the MEIS Department at CU Denver. As a lover of live music I hope to start my own business within the concert industry to continue to uplift music cities such as our own in Denver, Colorado. I enjoy riding my bike and being surrounded by witty people.</p>
 					<div class="text-break">
+						<div class="break-l"></div>
 						<h2>Studying in Cuba</h2>
+						<div class="break-r"></div>
 						<div class="text-break-bg"></div>
 					</div>
 					<p>Prior to visiting Havana, I had no idea what to expect from the Cuban music scene but after having the opportunity of attending music conference AM-PM I was able to see what goes on inside of their recording studios and learn directly from the people that spend their lives uplifting the Cuban music industry. Music is a huge part of their entire culture and that very obviously shines through with every step of their creation process in the studio.
