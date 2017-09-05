@@ -1,5 +1,5 @@
 <template>
-	<section class="home">
+	<section id="home">
 		<div id="content"></div>
 		<div id="midi-container">
 			<div id="home-bg">
@@ -283,7 +283,10 @@
 				ens6: new Howl({src: ['static/audio/loops/ens6.mp3']})
 			}
 
-			this.animIn();
+			if ( this.$route.path == '/' ){
+				this.animIn();
+			}
+			
 		},
 		beforeDestroy: function() {
 	        //this.aboutOut();
