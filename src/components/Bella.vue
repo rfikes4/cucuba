@@ -23,26 +23,90 @@
 				</div>
 			</div>
 		</div>
-		<div class="slider">
-			<div class="carousel">
-				<div class="carousel-cell">
+		<div class="slider-container">
+			<div class="slider">
+				<div class="slide">
 					<img class="s-img" src="../assets/images/bella/s1-1.jpg" />
 					<div class="s-grad"></div>
 				</div>
-				<div class="carousel-cell">
+				<div class="slide">
 					<img class="s-img" src="../assets/images/bella/s1-2.jpg" />
 					<div class="s-grad"></div>
 				</div>
-				<div class="carousel-cell">
+				<div class="slide">
 					<img class="s-img" src="../assets/images/bella/s1-3.jpg" />
 					<div class="s-grad"></div>
 				</div>
-				<div class="carousel-cell">
+				<div class="slide">
 					<img class="s-img" src="../assets/images/bella/s1-4.jpg" />
 					<div class="s-grad"></div>
 				</div>
-				<div class="carousel-cell">
+				<div class="slide">
 					<img class="s-img" src="../assets/images/bella/s1-5.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-6.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-7.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-8.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-9.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-10.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-11.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-12.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-13.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-14.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-15.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-16.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-17.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-18.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-19.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-20.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="slide">
+					<img class="s-img" src="../assets/images/bella/s1-21.jpg" />
 					<div class="s-grad"></div>
 				</div>
 			</div>
@@ -51,7 +115,10 @@
 </template>
 
 <script>
-	import Flickity from 'flickity'
+	import $ from 'jquery';
+	import 'slick-carousel';
+	import 'slick-carousel/slick/slick.css';
+	import 'slick-carousel/slick/slick-theme.css';
 	export default {
 		data() {
 			return {
@@ -62,82 +129,21 @@
 		},
 		mounted() {
 			console.log('bella');
-			// Flickity
-			//var carousel = document.querySelector('.carousel');
-			var carousel = document.getElementsByClassName('carousel')[0];
-			var flkty = new Flickity( carousel, {
-				initialIndex: this.index,
-			  	imagesLoaded: true,
-			  	percentPosition: false,
-			  	wrapAround: true,
-			  	prevNextButtons: false,
-			  	pageDots: false,
-			  	selectedAttraction: 0.018,
-				friction: 0.19,
-				accessibility: false,
-				//watchCSS: true
+
+			$(document).ready(function() {
+			  // slick carousel
+			  $('.slider').slick({
+			    vertical: true,
+			    slidesToShow: 3,
+			    slidesToScroll: 1,
+			    verticalSwiping: true,
+			    arrows: false,
+			    // centerMode: true,
+			    initialSlide: 1,
+			    focusOnSelect: true,
+			    touchThreshold: 100
+			  });
 			});
-
-			// Flickity scroll
-			// var imgs = carousel.querySelectorAll('.carousel-cell .slide .s-img');
-			//var imgsT = carousel.querySelectorAll('.carousel-cell .slide-title .s-img-t');
-			// var docStyle = document.documentElement.style;
-			// var transformProp = typeof docStyle.transform == 'string' ?
-			  	// 'transform' : 'WebkitTransform';
-
-			// flkty.on( 'scroll', function(progress) {
-			  // 	flkty.slides.forEach( function( slide, i ) {
-			  //   	var img = imgs[i];
-			  //   	//var imgT = imgsT[i];
-			  //   	var x = ( slide.target + flkty.x ) * -1/3;
-			  //   	img.style[ transformProp ] = 'translateX(' + x  + 'px)';
-			  //   	//imgT.style[ transformProp ] = 'translateX(' + x  + 'px)';
-			  // 	});
-			  // 	if (flkty.selectedIndex == 1 ) {
-			  // 		window.setTimeout(() => {
-					// 	flkty.select( 16, false, true );
-					// 	flkty.selectedElement.classList.add('force-selected');
-					// 	window.setTimeout(() => {
-					// 		flkty.selectedElement.classList.remove('force-selected');
-					// 	},1000);		
-					// }, 1000);
-			  		
-			  // 	} else if (flkty.selectedIndex == 17 ) {
-			  // 		window.setTimeout(() => {
-					// 	flkty.select( 2, false, true );
-					// 	flkty.selectedElement.classList.add('force-selected');
-					// 	window.setTimeout(() => {
-					// 		flkty.selectedElement.classList.remove('force-selected');
-					// 	},1000);
-					// }, 1000);
-			  // 	}
-			// }.bind(this));
-			// For Chrome
-			// window.addEventListener('mousewheel', this.mouseWheelEvent);
-			// // For Firefox
-			// window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
-			// window. setInterval(() => {
-			// 	this.scrollTime = 0;
-			// }, 1000);
-
-			// Flickity click
-			// flkty.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
-			// 	this.click(event, pointer, cellElement, cellIndex);
-			// }.bind(this));
-
-			// Flickity drag
-			// flkty.on( 'dragStart', function( event, pointer ) {
-			// 	this.dragging();
-			// }.bind(this));
-			// flkty.on( 'dragEnd', function( event, pointer ) {
-			// 	this.dragged();
-			// }.bind(this));
-			
-
-			// this.flkty = flkty;
-			// this.isCell = document.getElementsByClassName('is-selected')[0];
-			// this.cell = document.getElementsByClassName('carousel-cell');
-
 		},
 		methods: {
 
