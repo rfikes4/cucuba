@@ -109,7 +109,7 @@
 		data() {
 			return {
 				enter: 0,
-      			leave: 1000,
+      			leave: 0,
 				p1: null,
 				p2: null,
 				p3: null,
@@ -338,7 +338,7 @@
 				TweenMax.to(this.l2, 4.8, {rotation: 7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 1.2});
 				TweenMax.to(this.r2, 4.8, {rotation: -7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 1.8});
 				TweenMax.to(this.l3, 4.8, {rotation: 7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 2.4});
-				TweenMax.to(this.r3, 4.8, {rotation: -7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 3.0});
+				TweenMax.to(this.r3, 4.8, {rotation: -7.5, ease: Power1.easeInOut, repeat: -1, yoyo: true, delay: 3.0});				
 			},
 			toggle() {
 				var btn = document.getElementById(event.target.id);
@@ -835,6 +835,13 @@
 				} else if ( event.target.id == "rs3" ){
 					console.log('rs3');
 				}
+
+				TweenLite.killTweensOf(this.l1, {delay: 0.9});
+				TweenLite.killTweensOf(this.l2, {delay: 0.9});
+				TweenLite.killTweensOf(this.l3, {delay: 0.9});
+				TweenLite.killTweensOf(this.r1, {delay: 0.9});
+				TweenLite.killTweensOf(this.r2, {delay: 0.9});
+				TweenLite.killTweensOf(this.r3, {delay: 0.9});
 			},
 			fps() {
 				window.countFPS = (function () {

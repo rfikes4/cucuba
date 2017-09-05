@@ -587,15 +587,24 @@ a {
 	left: 0;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
+}
+
+.info-container {
+	width: 50%;
+    height: 100%;
+    overflow: hidden;
+    display: inline-block;
+	float: left;
 }
 
 .info {
-	width: 50%;
+	width: 100%;
+    padding-right: 17px;
 	height: 100%;
 	position: relative;
-	overflow: scroll;
-	display: inline-block;
-	float: left;
+	overflow-y: scroll;
+	top: -10vh;
 }
 
 .bio-pic {
@@ -606,6 +615,7 @@ a {
     background-size: cover;
     background-position: center;
     position: fixed;
+    opacity: 0;
 }
 
 .bio-grad {
@@ -613,8 +623,9 @@ a {
 	height: 100%;
 	background: linear-gradient(135deg, #fffc00 0%,#ff0000 50%,#0a00b2 100%);
 	mix-blend-mode: screen;
-	opacity: 0.9;
+	// opacity: 0.9;
 	position: absolute;
+	opacity: 0;
 }
 
 .bio-content {
@@ -646,20 +657,32 @@ a {
 	display: flex;
 	width: 100%;
 	justify-content: center;
+	top: -5vh;
 	.bio-line {
 		height: 1px;
-		width: 100%;
+		width: 0%;
+		opacity: 0;
 		background: white;
 		position: absolute;
 		top: 49%;
 	}
+	.bio-name-bg {
+		// background: white;
+		// height: 59px;
+		display: flex;
+		justify-content: center;
+	}
 	.bio-name {
 		display: inline-block;
-		color: $c2;
+		// color: $c2;
 		background: white;
 		position: relative;
 		padding: 0 30px;
 		box-shadow: 0 0 6vh 0 rgba(17, 24, 46, 0.5);
+		width: 0%;
+		height: 59px;
+		color: transparent;
+		opacity: 0;
 		&::before {
 			content: "";
 			position: absolute;
@@ -686,6 +709,8 @@ a {
 .bio-text {
 	position: relative;
 	padding: 60px 80px;
+	opacity: 0;
+	top: 5vh;
 }
 
 .text-break {
@@ -732,6 +757,8 @@ a {
     height: 100%;
     float: left;
     position: relative;
+    opacity: 0;
+    top: 10vh;
 }
 
 .slide {
@@ -777,6 +804,35 @@ a {
 	transition: all 0.25s ease-out;
 }
 
+#back {
+	position: absolute;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	bottom: -10vh;
+	.b-bg {
+		width: 40vh;
+		height: 40vh;
+		background: $c3;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: rotate(45deg);
+		position: absolute;
+		box-shadow: 0 0 6vh 0 rgba(0,0,0,1);
+		.b-bg-inner {
+			width: 37vh;
+			height: 37vh;
+			background: $c2;
+			box-shadow: inset 0 0 2vh 0 rgba(0,0,0,1);
+		}
+	}
+	.b-txt {
+		position: absolute;
+		top: 9vh;
+		opacity: 0;
+	}
+}
 
 
 
