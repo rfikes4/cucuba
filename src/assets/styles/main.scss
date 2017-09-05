@@ -20,6 +20,7 @@
 //   );
 $c1: #f7e9ce; // beige
 $c2: #11182e; // dark blue
+$c3: linear-gradient(135deg, #fffc00 0%,#ff0000 50%,#0a00b2 100%); // gradient
 
 body {
 	background-color: $c2;
@@ -36,17 +37,18 @@ p {
 
 h1, h2, h3 {
 	font-family: 'geared_slabregular';
+	text-transform: uppercase;
+	text-align: center; 
+	letter-spacing: 2px;
 	margin: 0;
 }
 
 h1 {
 	font-size: 48px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
 }
 
 h2 {
-	font-size: 11px;
+	font-size: 24px;
 }
 
 ul {
@@ -626,13 +628,13 @@ a {
 		background: linear-gradient(to bottom, rgba(17,24,46,0) 0%,rgba(17,24,46,1) 100%);
 		height: 50vh;
     	width: 100%;
-    	top: -20%;
+    	top: -14%;
 	}
 	.bio-bg-block {
 		background: $c2;
 		position: relative;
-		top: -20%;
-		height: 60%;
+		top: -14%;
+		height: 80%;
 	}
 }
 
@@ -654,6 +656,7 @@ a {
 		background: white;
 		position: relative;
 		padding: 0 30px;
+		box-shadow: 0 0 6vh 0 rgba(17, 24, 46, 0.5);
 		&::before {
 			content: "";
 			position: absolute;
@@ -679,7 +682,25 @@ a {
 
 .bio-text {
 	position: relative;
-	padding: 40px 80px;
+	padding: 60px 80px;
+}
+
+.text-break {
+	display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 60px 0;
+    position: relative;
+	.text-break-bg {
+		width: 50px;
+		height: 50px;
+		transform: rotate(45deg);
+		background: $c3;
+		mix-blend-mode: screen;
+		position: absolute;
+    	top: -11px;
+    	opacity: 0.7;
+	}
 }
 
 
