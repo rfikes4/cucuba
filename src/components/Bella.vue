@@ -23,19 +23,121 @@
 				</div>
 			</div>
 		</div>
-		<div class="slider"></div>
+		<div class="slider">
+			<div class="carousel">
+				<div class="carousel-cell">
+					<img class="s-img" src="../assets/images/bella/s1-1.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="carousel-cell">
+					<img class="s-img" src="../assets/images/bella/s1-2.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="carousel-cell">
+					<img class="s-img" src="../assets/images/bella/s1-3.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="carousel-cell">
+					<img class="s-img" src="../assets/images/bella/s1-4.jpg" />
+					<div class="s-grad"></div>
+				</div>
+				<div class="carousel-cell">
+					<img class="s-img" src="../assets/images/bella/s1-5.jpg" />
+					<div class="s-grad"></div>
+				</div>
+			</div>
+		</div>
 	</section>
 </template>
 
 <script>
+	import Flickity from 'flickity'
 	export default {
 		data() {
 			return {
-				
+				flkty: null,
+				isCell: null,
+				cell: null
 			}
 		},
 		mounted() {
 			console.log('bella');
+			// Flickity
+			//var carousel = document.querySelector('.carousel');
+			var carousel = document.getElementsByClassName('carousel')[0];
+			var flkty = new Flickity( carousel, {
+				initialIndex: this.index,
+			  	imagesLoaded: true,
+			  	percentPosition: false,
+			  	wrapAround: true,
+			  	prevNextButtons: false,
+			  	pageDots: false,
+			  	selectedAttraction: 0.018,
+				friction: 0.19,
+				accessibility: false,
+				//watchCSS: true
+			});
+
+			// Flickity scroll
+			// var imgs = carousel.querySelectorAll('.carousel-cell .slide .s-img');
+			//var imgsT = carousel.querySelectorAll('.carousel-cell .slide-title .s-img-t');
+			// var docStyle = document.documentElement.style;
+			// var transformProp = typeof docStyle.transform == 'string' ?
+			  	// 'transform' : 'WebkitTransform';
+
+			// flkty.on( 'scroll', function(progress) {
+			  // 	flkty.slides.forEach( function( slide, i ) {
+			  //   	var img = imgs[i];
+			  //   	//var imgT = imgsT[i];
+			  //   	var x = ( slide.target + flkty.x ) * -1/3;
+			  //   	img.style[ transformProp ] = 'translateX(' + x  + 'px)';
+			  //   	//imgT.style[ transformProp ] = 'translateX(' + x  + 'px)';
+			  // 	});
+			  // 	if (flkty.selectedIndex == 1 ) {
+			  // 		window.setTimeout(() => {
+					// 	flkty.select( 16, false, true );
+					// 	flkty.selectedElement.classList.add('force-selected');
+					// 	window.setTimeout(() => {
+					// 		flkty.selectedElement.classList.remove('force-selected');
+					// 	},1000);		
+					// }, 1000);
+			  		
+			  // 	} else if (flkty.selectedIndex == 17 ) {
+			  // 		window.setTimeout(() => {
+					// 	flkty.select( 2, false, true );
+					// 	flkty.selectedElement.classList.add('force-selected');
+					// 	window.setTimeout(() => {
+					// 		flkty.selectedElement.classList.remove('force-selected');
+					// 	},1000);
+					// }, 1000);
+			  // 	}
+			// }.bind(this));
+			// For Chrome
+			// window.addEventListener('mousewheel', this.mouseWheelEvent);
+			// // For Firefox
+			// window.addEventListener('DOMMouseScroll', this.mouseWheelEvent);
+			// window. setInterval(() => {
+			// 	this.scrollTime = 0;
+			// }, 1000);
+
+			// Flickity click
+			// flkty.on( 'staticClick', function( event, pointer, cellElement, cellIndex ) {
+			// 	this.click(event, pointer, cellElement, cellIndex);
+			// }.bind(this));
+
+			// Flickity drag
+			// flkty.on( 'dragStart', function( event, pointer ) {
+			// 	this.dragging();
+			// }.bind(this));
+			// flkty.on( 'dragEnd', function( event, pointer ) {
+			// 	this.dragged();
+			// }.bind(this));
+			
+
+			// this.flkty = flkty;
+			// this.isCell = document.getElementsByClassName('is-selected')[0];
+			// this.cell = document.getElementsByClassName('carousel-cell');
+
 		},
 		methods: {
 

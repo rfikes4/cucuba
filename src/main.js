@@ -7,6 +7,7 @@ import {TweenMax, Power2, TimelineLite} from "gsap";
 // import pixi from 'pixi'
 //import p5 from 'p5'
 import Howl from 'howler'
+// import Flickity from 'flickity'
 
 Vue.config.productionTip = false
 
