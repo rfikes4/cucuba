@@ -3,6 +3,9 @@
 		<div id="content"></div>
 		<div id="midi-container">
 			<div id="home-bg">
+				<div class="p-container" ref="p0">
+					<div id="p0" class="midi-pattern"></div>
+				</div>
 				<div class="p-container" ref="p1">
 					<div id="p1" class="midi-pattern"></div>
 				</div>
@@ -110,6 +113,7 @@
 			return {
 				enter: 0,
       			leave: 0,
+      			p0: null,
 				p1: null,
 				p2: null,
 				p3: null,
@@ -187,7 +191,7 @@
 		},
 		mounted() {
 			// this.bg = new TimelineMax({repeat: -1});
-
+			this.p0 = this.$refs.p0;
 			this.p1 = this.$refs.p1;
 			this.p2 = this.$refs.p2;
 			this.p3 = this.$refs.p3;
@@ -294,7 +298,11 @@
 		methods: {
 			animIn() {
 				var a = new TimelineMax();
+				var vh1 = 250 + 'vh';
 				a.to(this.m, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0")
+				// a.to(this.p0, 2.4, {width: vh1, height: vh1, ease: Elastic.easeOut.config(1, 0.5)}, "0.6")
+				a.to(this.p0, 0, {width: vh1, height: vh1, opacity: 0, ease: Elastic.easeOut.config(1, 0.5)}, "0")
+				a.to(this.p0, 2.4, {opacity: 1, ease: Power3.easeOut}, "0")
 
 				// Leafs
 				a.to(this.l1, 2.4, {scale: 1, ease: Elastic.easeOut.config(1, 0.5)}, "0.6")
@@ -836,12 +844,18 @@
 					console.log('rs3');
 				}
 
-				TweenLite.killTweensOf(this.l1, {delay: 0.9});
-				TweenLite.killTweensOf(this.l2, {delay: 0.9});
-				TweenLite.killTweensOf(this.l3, {delay: 0.9});
-				TweenLite.killTweensOf(this.r1, {delay: 0.9});
-				TweenLite.killTweensOf(this.r2, {delay: 0.9});
-				TweenLite.killTweensOf(this.r3, {delay: 0.9});
+				// TweenMax.killTweensOf(this.l1, {delay: 0.9});
+				// TweenMax.killTweensOf(this.l2, {delay: 0.9});
+				// TweenMax.killTweensOf(this.l3, {delay: 0.9});
+				// TweenMax.killTweensOf(this.r1, {delay: 0.9});
+				// TweenMax.killTweensOf(this.r2, {delay: 0.9});
+				// TweenMax.killTweensOf(this.r3, {delay: 0.9});
+				TweenMax.set(this.l1, {clearProps: "all", delay: 0.9});
+				TweenMax.set(this.l2, {clearProps: "all", delay: 0.9});
+				TweenMax.set(this.l3, {clearProps: "all", delay: 0.9});
+				TweenMax.set(this.r1, {clearProps: "all", delay: 0.9});
+				TweenMax.set(this.r2, {clearProps: "all", delay: 0.9});
+				TweenMax.set(this.r3, {clearProps: "all", delay: 0.9});
 			},
 			fps() {
 				window.countFPS = (function () {

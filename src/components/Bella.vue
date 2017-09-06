@@ -5,17 +5,17 @@
 				<div class="bio-pic" ref="i2"></div>
 				<div class="bio-grad" ref="i3"></div>
 				<div class="bio-content">
-					<div class="bio-bg">
+					<div class="bio-bg" ref="i4">
 						<div class="bio-bg-fade"></div>
 						<div class="bio-bg-block"></div>
 					</div>
-					<div class="bio-title" ref="i4">
-						<div class="bio-line" ref="i5"></div>
+					<div class="bio-title" ref="i5">
+						<div class="bio-line" ref="i6"></div>
 						<div class="bio-name-bg">
-							<h1 class="bio-name" ref="i6">Isabella Sandoval</h1>
+							<h1 class="bio-name" ref="i7">Isabella Sandoval</h1>
 						</div>
 					</div>
-					<div class="bio-text" ref="i7">
+					<div class="bio-text" ref="i8">
 						<p>Hello! I’m Isabella Sandoval and I’m currently in my last semester in the MEIS Department at CU Denver. As a lover of live music I hope to start my own business within the concert industry to continue to uplift music cities such as our own in Denver, Colorado. I enjoy riding my bike and being surrounded by witty people.</p>
 						<div class="text-break">
 							<div class="break-l"></div>
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 
-		<div class="slider-container" ref="i8">
+		<div class="slider-container" ref="i9">
 			<div class="slider">
 				<div class="slide">
 					<img class="s-img" src="../assets/images/bella/s1-1.jpg" />
@@ -119,11 +119,11 @@
 			</div>
 		</div>
 
-		<div id="back" class="back" ref="i9" @click="animOut">
+		<div id="back" class="back" ref="i10" @click="animOut">
 			<div class="b-bg">
 				<div class="b-bg-inner"></div>
 			</div>
-			<h2 class="b-txt" ref="i10">Music</h2>
+			<h2 class="b-txt" ref="i11">Music</h2>
 		</div>
 
 	</section>
@@ -147,6 +147,7 @@
 				i8: null,
 				i9: null,
 				i10: null,
+				i11: null
 			}
 		},
 		mounted() {
@@ -160,6 +161,7 @@
 			this.i8 = this.$refs.i8;
 			this.i9 = this.$refs.i9;
 			this.i10 = this.$refs.i10;
+			this.i11 = this.$refs.i11;
 
 
 			this.back = this.$refs.back;
@@ -190,15 +192,16 @@
 				a.to(this.i1, 0.6, {top: 0, ease: Power3.easeOut}, "0.9")
 				a.to(this.i2, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
 				a.to(this.i3, 0.6, {opacity: 0.9, ease: Power3.easeOut}, "0.9")
-				a.to(this.i4, 0.6, { top: 0, ease: Power3.easeOut}, "0.9")
-				a.to(this.i6, 0.6, { opacity: 1, width: widthN, ease: Power3.easeOut}, "1.2")
-				a.to(this.i6, 0.6, { css:{color: '#11182e'}, ease: Power3.easeOut}, "1.5")
-				a.to(this.i5, 0.3, { width: widthN, opacity: 1, ease: Power3.easeOut}, "1.4")
-				a.to(this.i7, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "1.2")
-				a.to(this.i8, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "0.9")
+				a.to(this.i4, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
+				a.to(this.i5, 0.6, { top: 0, ease: Power3.easeOut}, "0.9")
+				a.to(this.i7, 0.6, { opacity: 1, width: widthN, ease: Power3.easeOut}, "1.2")
+				a.to(this.i7, 0.6, { css:{color: '#11182e'}, ease: Power3.easeOut}, "1.5")
+				a.to(this.i6, 0.3, { width: widthN, opacity: 1, ease: Power3.easeOut}, "1.4")
+				a.to(this.i8, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "1.2")
+				a.to(this.i9, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "0.9")
 				// a.add(this.slide, "1.2")
-				a.to(this.i9, 0.6, { bottom: vh, ease: Power3.easeOut}, "1.2")
-				a.to(this.i10, 0.6, { top: vh1, opacity: 1, ease: Power3.easeOut}, "1.4")
+				a.to(this.i10, 0.6, { bottom: vh, ease: Power3.easeOut}, "1.2")
+				a.to(this.i11, 0.6, { top: vh1, opacity: 1, ease: Power3.easeOut}, "1.4")
 			},
 			// slide() {
 			// 	$('.slider').slick('slickGoTo','1');
@@ -210,8 +213,8 @@
 			animOut() {
 				var b = new TimelineMax();
 				var vh = 170 + '%'
-				b.to(this.i9, 0.6, { bottom: vh, scale: 6, ease: Power3.easeOut}, "0")
-				b.to(this.i10, 0, { opacity: 0, ease: Power3.easeOut}, "0")
+				b.to(this.i10, 0.6, { bottom: vh, scale: 6, ease: Power3.easeOut}, "0")
+				b.to(this.i11, 0, { opacity: 0, ease: Power3.easeOut}, "0")
 				b.add(this.gotoHome, "0.6")
 			}
 			
