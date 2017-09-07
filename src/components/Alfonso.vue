@@ -118,7 +118,7 @@
 			    slidesToScroll: 1,
 			    verticalSwiping: true,
 			    arrows: false,
-			    initialSlide: 1,
+			    initialSlide: 3,
 			    focusOnSelect: true,
 			    touchThreshold: 100
 			  });
