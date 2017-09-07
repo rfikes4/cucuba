@@ -2,7 +2,7 @@
 	<section id="leaf">
 		<div class="info-container">
 			<div class="info" ref="i1">
-				<div id="b-richard" class="bio-pic" ref="i2"></div>
+				<div id="b-x" class="bio-pic" ref="i2"></div>
 				<div class="bio-grad" ref="i3"></div>
 				<div class="bio-content">
 					<div class="bio-bg" ref="i4">
@@ -16,8 +16,17 @@
 						</div>
 					</div>
 					<div class="bio-text" ref="i8">
-						<p>Richard Strasser is the new Chair of the Department of Music and Industry Entertainment Studies. He was granted tenure by the University of Colorado Board of Regents several weeks ago and comes to CU Denver from Northeastern University n Boston. Dr. Strasser is a graduate from the Australian National University with a Bachelor of Music (distinction) and a Graduate Diploma in Music. After winning both the Queen Elizabeth II Silver Jubilee Award and the Arts Council of Australia Scholarship, he continued his studies at the Manhattan School of Music, where he received a Master of Music and Doctor of Musical Arts degree. Richard Strasser also has an arts administration degree from New York University. Dr. Strasser has served as a faculty member of numerous universities including John Cabot University in Rome, Clarion University of Pennsylvania, and as Coordinator of the Music Business program at the University of Massachusetts Lowell. Dr. Strasser served on the Board of Director’s for the Music and Entertainment Industry Educators Association, the Cultural Organization of Lowell and the working group for the development for national music industry education standards for the National Association of Schools of Music. He is author of The Savvy Studio Owner published by Hal Leonard books, Music Business: The Key Concepts, and The Music Business and Recording Industry with Routledge. Richard is the recipient of the 2008 Excellence in Teaching Award at Northeastern University.</p>
-						<div class="text-break">
+						<p>The hippest place to be in Havana is an old olive oil factory once known as El Cocinero. Reincarnated this February as the Fábrica de Arte Cubano (Cuban Art Factory—FAC), it is the brainchild of Cuban rocker, rapper and filmmaker Equis Alfonso (“X”) and is already taking the Cuban arts scene by storm.
+						<br><br>Part Miami Art Basel, part Williamsburg warehouse party, the FAC hosts viewings, performances and exhibitions of cinema, theatre, dance, music, literature, fashion, architecture, graphic design, photography, and the visual arts. Every evening, Havana hipsters—wearing Zara tops, TOMS shoes purchased in Miami, and talking on iPhones—form a line around the block to enter. For a 2 CUC fee ($2, or 50 Cuban pesos) to enter the former factory space, they can sit on and among artistic installations, walk past walls of photographs and paintings, watch documentaries, and dance to some of Cuba’s hottest music.
+						<br><br>FAC opened on February 13, 2014, with a mission to tear down the walls between different artistic mediums, shed art world pretension and bring together the entire community. It was inaugurated with a bang: X himself performed among the works of 33 other Cuban artists.
+						<br><br>No one on the island is better suited to promote the FAC’s unique blend of mixed media than X. Now 41, he was raised in a world of artistic fusion, studying classical piano from the age of seven, playing in the jazz group Estado de Ánimo, and—upon completing his conservatory training—joining his parents Carlos Alfonso and Ele Valdés in their Afro-Cuban symphonic rock group, Síntesis, where he contributed percussion and vocals.
+						<br><br>“I have always been surrounded by different art forms, and this felt like the moment to bring them together in the same space, knowing how much their unification has contributed to me, both as a person and an artist,” he says.
+						<br><br>By the time his first solo album, Mundo Real (Real World), appeared in 2000, X was already known across the island for his mastery of different genres—from funk and hip-hop to rock, reggae and rumba—and for the diverse audiences that gathered to hear him play. His concerts themselves are works of artistic experimentation, often including painters, rappers and dancers on stage with videos playing on the surrounding walls.
+						<br><br>The emerging creativity of Cuba’s art scene inspired X’s original vision of bringing together Cuban musicians, dancers, stage actors, and visual artists under the same roof.
+						<br><br>In mid-2010, he and a group of collaborators secured support from the Ministry of Culture and the Instituto Cubano de la Música (Cuban Institute of Music) to hold artistic events and performances at the PABEXPO Exhibition Center in Havana. After searching for several years, the team finally found a more permanent home in El Cocinero.
+						<br><br>X insists on playing down his own role in turning FAC into a thriving artistic community, even though his growing international prominence has helped ensure the organization’s success. He received a 2000 Coral Award from Havana’s Festival Internacional del Nuevo Cine Latinoamericano (International Festival of New Latin American Cinema) for co-composing the score of Cuban film María Antonia and garnered Latin Grammy nominations for his music in 2001 and 2002. In 2005, he was honored with Spain’s Goya Award for best original music in the film Habana Blues.
+						<br><br>“The future of the FAC is in the hands of the artists and their imaginations,” X says. “The most important thing is that it has already created the possibility of creating and living together.”</p>
+						<!-- <div class="text-break">
 							<div class="break-l"></div>
 							<h2>AM-PM</h2>
 							<div class="break-r"></div>
@@ -25,7 +34,7 @@
 						</div>
 						<p>Cuban music has been my favorite genre of music to study and perform for many years. As a pianist and percussionist, it has always been a beautiful blend of rhythmic and harmonic complexity while also having a groove that catches the attention of the average listener. My study and performance of Cuban music has always been outside of the island, and this last summer was my first opportunity to travel to Cuba. Even though I knew amount about the country and had seen photos and videos, it was still incredibly significant for me to see it first hand. I experienced the amazing music and kind people and also saw the poverty of the country.
 						<br><br>The trip was significant for the college to establish a connection with Cuba that extended beyond music performance and into music business and recording arts, and will help to foster more connections in the future into other artistic areas of the college. For me, it was an experience that has changed my perspective and my teaching, because I can now speak about what I saw and heard myself in Havana.
-</p>
+</p> -->
 					</div>
 				</div>
 			</div>
@@ -33,22 +42,22 @@
 
 		<div class="slider-container" ref="i9">
 			<div class="slider">
-				<div class="slide s3-1">
+				<div class="slide s6-1">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s3-2">
+				<div class="slide s6-2">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s3-3">
+				<div class="slide s6-3">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s3-4">
+				<div class="slide s6-4">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s3-5">
+				<div class="slide s6-5">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s3-6">
+				<div class="slide s6-6">
 					<div class="s-grad"></div>
 				</div>
 			</div>
