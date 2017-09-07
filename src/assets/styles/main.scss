@@ -848,6 +848,8 @@ a {
 	}
 }
 
+
+
 #b-bella {
 	background-image: url('../../assets/images/bella/profile.jpg');
 }
@@ -976,6 +978,43 @@ a {
 }
 .s3-6 {
 	background-image: url('../../assets/images/richard/s3-6.jpg');
+}
+
+
+
+
+
+
+
+
+#cam-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.cam-img {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	position: absolute;
+}
+
+.s5-1 {
+	background-image: url('../../assets/images/cam/s5-1.jpg');
+	background-position: right;
+}
+.s5-2 {
+	background-image: url('../../assets/images/cam/s5-2.jpg');
+	background-position: bottom;
+}
+.s5-3 {
+	background-image: url('../../assets/images/cam/s5-3.jpg');
+	background-position: center;
+}
+.s5-4 {
+	background-image: url('../../assets/images/cam/s5-4.jpg');
+	background-position: center;
 }
 
 

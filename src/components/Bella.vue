@@ -181,7 +181,6 @@
 				a.to(this.i11, 0.6, { top: vh1, opacity: 1, ease: Power3.easeOut}, "1.4")
 			},
 			gotoHome() {
-				console.log('asd');
 				this.$router.push('/');
 			},
 			animOut() {

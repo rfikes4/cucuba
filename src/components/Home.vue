@@ -853,7 +853,14 @@
 				} else if ( event.target.id == "rs1" ){
 					console.log('rs1');
 				} else if ( event.target.id == "rs2" ){
-					console.log('rs2');
+					this.$router.push('/cam');
+					a.to(this.l1, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.l2, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.l3, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.r1, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
+					a.to(this.r2, 0.3, {scale: 1.15, ease: Power3.easeOut}, "0")
+					a.to(this.r2, 0.3, {scale: 0, ease: Power3.easeIn}, "0.3")
+					a.to(this.r3, 0.6, {scale: 0, ease: Power3.easeOut}, "0")
 				} else if ( event.target.id == "rs3" ){
 					this.$router.push('/alfonso');
 					a.to(this.l1, 0.6, {scale: 0, ease: Power3.easeOut}, "0")

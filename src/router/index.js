@@ -13,6 +13,7 @@ import Home from '@/components/Home'
 import Bella from '@/components/Bella'
 import Pete from '@/components/Pete'
 import Richard from '@/components/Richard'
+import Cam from '@/components/Cam'
 import Alfonso from '@/components/Alfonso'
 // import PixiRenderer from '@/components/PIXIRenderer.vue'
 // import Sprite from '@/components/PIXISprite.vue'
@@ -39,6 +40,10 @@ export default new Router({
         {
             path: '/richard',
             component: Richard
+        },
+        {
+            path: '/cam',
+            component: Cam
         },
         {
             path: '/alfonso',

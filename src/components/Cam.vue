@@ -1,6 +1,6 @@
 <template>
 	<section id="leaf">
-		<div class="info-container">
+		<!-- <div class="info-container">
 			<div class="info" ref="i1">
 				<div id="b-richard" class="bio-pic" ref="i2"></div>
 				<div class="bio-grad" ref="i3"></div>
@@ -52,6 +52,12 @@
 					<div class="s-grad"></div>
 				</div>
 			</div>
+		</div> -->
+		<div id="cam-container">
+			<div class="cam-img s5-1"></div>
+			<div class="cam-img s5-2"></div>
+			<div class="cam-img s5-3"></div>
+			<div class="cam-img s5-4"></div>
 		</div>
 
 		<div id="back" class="back" ref="i10" @click="animOut">
@@ -65,55 +71,55 @@
 </template>
 
 <script>
-	import $ from 'jquery';
-	import 'slick-carousel';
-	import 'slick-carousel/slick/slick.css';
-	import 'slick-carousel/slick/slick-theme.css';
+	// import $ from 'jquery';
+	// import 'slick-carousel';
+	// import 'slick-carousel/slick/slick.css';
+	// import 'slick-carousel/slick/slick-theme.css';
 	export default {
 		data() {
 			return {
-				i1: null,
-				i2: null,
-				i3: null,
-				i4: null,
-				i5: null,
-				i6: null,
-				i7: null,
-				i8: null,
-				i9: null,
+				// i1: null,
+				// i2: null,
+				// i3: null,
+				// i4: null,
+				// i5: null,
+				// i6: null,
+				// i7: null,
+				// i8: null,
+				// i9: null,
 				i10: null,
 				i11: null
 			}
 		},
 		mounted() {
-			this.i1 = this.$refs.i1;
-			this.i2 = this.$refs.i2;
-			this.i3 = this.$refs.i3;
-			this.i4 = this.$refs.i4;
-			this.i5 = this.$refs.i5;
-			this.i6 = this.$refs.i6;
-			this.i7 = this.$refs.i7;
-			this.i8 = this.$refs.i8;
-			this.i9 = this.$refs.i9;
+			// this.i1 = this.$refs.i1;
+			// this.i2 = this.$refs.i2;
+			// this.i3 = this.$refs.i3;
+			// this.i4 = this.$refs.i4;
+			// this.i5 = this.$refs.i5;
+			// this.i6 = this.$refs.i6;
+			// this.i7 = this.$refs.i7;
+			// this.i8 = this.$refs.i8;
+			// this.i9 = this.$refs.i9;
 			this.i10 = this.$refs.i10;
 			this.i11 = this.$refs.i11;
 
 
 			this.back = this.$refs.back;
 
-			$(document).ready(function() {
-			  // slick carousel
-			  $('.slider').slick({
-			    vertical: true,
-			    slidesToShow: 3,
-			    slidesToScroll: 1,
-			    verticalSwiping: true,
-			    arrows: false,
-			    initialSlide: 1,
-			    focusOnSelect: true,
-			    touchThreshold: 100
-			  });
-			});
+			// $(document).ready(function() {
+			//   // slick carousel
+			//   $('.slider').slick({
+			//     vertical: true,
+			//     slidesToShow: 3,
+			//     slidesToScroll: 1,
+			//     verticalSwiping: true,
+			//     arrows: false,
+			//     initialSlide: 1,
+			//     focusOnSelect: true,
+			//     touchThreshold: 100
+			//   });
+			// });
 
 			this.animIn();
 		},
@@ -122,17 +128,17 @@
 				var a = new TimelineMax();
 				var vh = 10 + 'vh'
 				var vh1 = 2 + 'vh'
-				var widthN = 100 + '%';
-				a.to(this.i1, 0.6, {top: 0, ease: Power3.easeOut}, "0.9")
-				a.to(this.i2, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
-				a.to(this.i3, 0.6, {opacity: 0.9, ease: Power3.easeOut}, "0.9")
-				a.to(this.i4, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
-				a.to(this.i5, 0.6, { top: 0, ease: Power3.easeOut}, "0.9")
-				a.to(this.i7, 0.6, { opacity: 1, width: widthN, ease: Power3.easeOut}, "1.2")
-				a.to(this.i7, 0.6, { css:{color: '#11182e'}, ease: Power3.easeOut}, "1.5")
-				a.to(this.i6, 0.3, { width: widthN, opacity: 1, ease: Power3.easeOut}, "1.4")
-				a.to(this.i8, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "1.2")
-				a.to(this.i9, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "0.9")
+				// var widthN = 100 + '%';
+				// a.to(this.i1, 0.6, {top: 0, ease: Power3.easeOut}, "0.9")
+				// a.to(this.i2, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
+				// a.to(this.i3, 0.6, {opacity: 0.9, ease: Power3.easeOut}, "0.9")
+				// a.to(this.i4, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
+				// a.to(this.i5, 0.6, { top: 0, ease: Power3.easeOut}, "0.9")
+				// a.to(this.i7, 0.6, { opacity: 1, width: widthN, ease: Power3.easeOut}, "1.2")
+				// a.to(this.i7, 0.6, { css:{color: '#11182e'}, ease: Power3.easeOut}, "1.5")
+				// a.to(this.i6, 0.3, { width: widthN, opacity: 1, ease: Power3.easeOut}, "1.4")
+				// a.to(this.i8, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "1.2")
+				// a.to(this.i9, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "0.9")
 				a.to(this.i10, 0.6, { bottom: vh, ease: Power3.easeOut}, "1.2")
 				a.to(this.i11, 0.6, { top: vh1, opacity: 1, ease: Power3.easeOut}, "1.4")
 			},
