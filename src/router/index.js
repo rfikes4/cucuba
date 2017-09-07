@@ -11,6 +11,9 @@ import Router from 'vue-router'
 // import Threshold from '@/components/Threshold'
 import Home from '@/components/Home'
 import Bella from '@/components/Bella'
+import Pete from '@/components/Pete'
+import Richard from '@/components/Richard'
+import Alfonso from '@/components/Alfonso'
 // import PixiRenderer from '@/components/PIXIRenderer.vue'
 // import Sprite from '@/components/PIXISprite.vue'
 // import Container from '@/components/PIXIContainer.vue'
@@ -28,6 +31,18 @@ export default new Router({
         {
             path: '/bella',
             component: Bella
+        },
+        {
+            path: '/pete',
+            component: Pete
+        },
+        {
+            path: '/richard',
+            component: Richard
+        },
+        {
+            path: '/alfonso',
+            component: Alfonso
         }
       ]
     },

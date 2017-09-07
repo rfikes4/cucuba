@@ -2,7 +2,7 @@
 	<section id="leaf">
 		<div class="info-container">
 			<div class="info" ref="i1">
-				<div id="b-bella" class="bio-pic" ref="i2"></div>
+				<div id="b-richard" class="bio-pic" ref="i2"></div>
 				<div class="bio-grad" ref="i3"></div>
 				<div class="bio-content">
 					<div class="bio-bg" ref="i4">
@@ -12,19 +12,20 @@
 					<div class="bio-title" ref="i5">
 						<div class="bio-line" ref="i6"></div>
 						<div class="bio-name-bg">
-							<h1 class="bio-name" ref="i7">Isabella Sandoval</h1>
+							<h1 class="bio-name" ref="i7">Richard Strasser</h1>
 						</div>
 					</div>
 					<div class="bio-text" ref="i8">
-						<p>Hello! I’m Isabella Sandoval and I’m currently in my last semester in the MEIS Department at CU Denver. As a lover of live music I hope to start my own business within the concert industry to continue to uplift music cities such as our own in Denver, Colorado. I enjoy riding my bike and being surrounded by witty people.</p>
+						<p>Richard Strasser is the new Chair of the Department of Music and Industry Entertainment Studies. He was granted tenure by the University of Colorado Board of Regents several weeks ago and comes to CU Denver from Northeastern University n Boston. Dr. Strasser is a graduate from the Australian National University with a Bachelor of Music (distinction) and a Graduate Diploma in Music. After winning both the Queen Elizabeth II Silver Jubilee Award and the Arts Council of Australia Scholarship, he continued his studies at the Manhattan School of Music, where he received a Master of Music and Doctor of Musical Arts degree. Richard Strasser also has an arts administration degree from New York University. Dr. Strasser has served as a faculty member of numerous universities including John Cabot University in Rome, Clarion University of Pennsylvania, and as Coordinator of the Music Business program at the University of Massachusetts Lowell. Dr. Strasser served on the Board of Director’s for the Music and Entertainment Industry Educators Association, the Cultural Organization of Lowell and the working group for the development for national music industry education standards for the National Association of Schools of Music. He is author of The Savvy Studio Owner published by Hal Leonard books, Music Business: The Key Concepts, and The Music Business and Recording Industry with Routledge. Richard is the recipient of the 2008 Excellence in Teaching Award at Northeastern University.</p>
 						<div class="text-break">
 							<div class="break-l"></div>
-							<h2>Studying in Cuba</h2>
+							<h2>AM-PM</h2>
 							<div class="break-r"></div>
 							<div class="text-break-bg"></div>
 						</div>
-						<p>Prior to visiting Havana, I had no idea what to expect from the Cuban music scene but after having the opportunity of attending music conference AM-PM I was able to see what goes on inside of their recording studios and learn directly from the people that spend their lives uplifting the Cuban music industry. Music is a huge part of their entire culture and that very obviously shines through with every step of their creation process in the studio.
-						<br><br>Upon arrival, it didn’t take long to be greeted with big hugs from the very enthusiastic organizers of AM-PM, feeling welcomed would be an understatement.<br><br>Most of the conference was held in the famous Fabrica de Arte Cubano- once an abandoned oil factory that has since been transformed into a breath-taking contemporary cultural center for films, art exhibitions, nightlife and live shows.<br><br>With workshops on how to properly utilize artist’s Youtube channels it is obvious that they are at a different technological stage in the industry than we are. However, what they may lack in resources is made up by with their passion for music, as it continues to inspire them to build up their ever-growing success of Cuban musicians.<br><br>As music professionals in a developing country, these people face completely different obstacles than our Denver talent. However, it is very obvious that their strong drive and love of music doesn’t let their limited resources discourage their art.</p>
+						<p>Cuban music has been my favorite genre of music to study and perform for many years. As a pianist and percussionist, it has always been a beautiful blend of rhythmic and harmonic complexity while also having a groove that catches the attention of the average listener. My study and performance of Cuban music has always been outside of the island, and this last summer was my first opportunity to travel to Cuba. Even though I knew amount about the country and had seen photos and videos, it was still incredibly significant for me to see it first hand. I experienced the amazing music and kind people and also saw the poverty of the country.
+						<br><br>The trip was significant for the college to establish a connection with Cuba that extended beyond music performance and into music business and recording arts, and will help to foster more connections in the future into other artistic areas of the college. For me, it was an experience that has changed my perspective and my teaching, because I can now speak about what I saw and heard myself in Havana.
+</p>
 					</div>
 				</div>
 			</div>
@@ -32,67 +33,22 @@
 
 		<div class="slider-container" ref="i9">
 			<div class="slider">
-				<div class="slide s1-1">
+				<div class="slide s3-1">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s1-2">
+				<div class="slide s3-2">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s1-3">
+				<div class="slide s3-3">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s1-4">
+				<div class="slide s3-4">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s1-5">
+				<div class="slide s3-5">
 					<div class="s-grad"></div>
 				</div>
-				<div class="slide s1-6">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-7">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-8">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-9">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-10">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-11">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-12">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-13">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-14">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-15">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-16">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-17">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-18">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-19">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-20">
-					<div class="s-grad"></div>
-				</div>
-				<div class="slide s1-21">
+				<div class="slide s3-6">
 					<div class="s-grad"></div>
 				</div>
 			</div>

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <!-- <app-nav></app-nav> -->
-     <transition :duration="{ enter:enter, leave:leave }" mode="out-in">
+     <!-- <transition :duration="{ enter:enter, leave:leave }" mode="out-in"> -->
       <router-view></router-view>
-    </transition>
+    <!-- </transition> -->
     <!-- <div class="bg"></div> -->
   </div>
 </template>
@@ -12,8 +12,8 @@
 export default {
   data () {
     return {
-      enter: 0,
-      leave: 1000
+      // enter: 0,
+      // leave: 1000
     }
   },
   watch: {
