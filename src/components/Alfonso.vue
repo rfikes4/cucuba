@@ -132,18 +132,30 @@
 				var vh = 10 + 'vh'
 				var vh1 = 2 + 'vh'
 				var widthN = 100 + '%';
-				a.to(this.i1, 0.6, {top: 0, ease: Power3.easeOut}, "0.9")
+				a.to(this.i1, 1.2, {top: 0, ease: Power3.easeOut}, "0.9")
+
+				// Pic
 				a.to(this.i2, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
 				a.to(this.i3, 0.6, {opacity: 0.9, ease: Power3.easeOut}, "0.9")
+
+				// Fade
 				a.to(this.i4, 0.6, {opacity: 1, ease: Power3.easeOut}, "0.9")
-				a.to(this.i5, 0.6, { top: 0, ease: Power3.easeOut}, "0.9")
-				a.to(this.i7, 0.6, { opacity: 1, width: widthN, ease: Power3.easeOut}, "1.2")
-				a.to(this.i7, 0.6, { css:{color: '#11182e'}, ease: Power3.easeOut}, "1.5")
-				a.to(this.i6, 0.3, { width: widthN, opacity: 1, ease: Power3.easeOut}, "1.4")
-				a.to(this.i8, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "1.2")
-				a.to(this.i9, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "0.9")
-				a.to(this.i10, 0.6, { bottom: vh, ease: Power3.easeOut}, "1.2")
-				a.to(this.i11, 0.6, { top: vh1, opacity: 1, ease: Power3.easeOut}, "1.4")
+
+				// Title
+				a.to(this.i5, 0.6, { top: 0, ease: Power3.easeOut}, "1.2")
+				a.to(this.i7, 0.6, { opacity: 1, width: widthN, ease: Power3.easeOut}, "1.5")
+				a.to(this.i7, 0.6, { css:{color: '#11182e'}, ease: Power3.easeOut}, "1.8")
+				a.to(this.i6, 0.3, { width: widthN, opacity: 1, ease: Power3.easeOut}, "1.7")
+
+				// Txt
+				a.to(this.i8, 0.6, { top: 0, opacity: 1, ease: Power3.easeOut}, "1.5")
+
+				// Slider
+				a.to(this.i9, 1.2, { top: 0, opacity: 1, ease: Power3.easeOut}, "0.9")
+
+				// Back
+				a.to(this.i10, 0.6, { bottom: vh, ease: Power3.easeOut}, "1.5")
+				a.to(this.i11, 0.6, { top: vh1, opacity: 1, ease: Power3.easeOut}, "1.7")
 			},
 			gotoHome() {
 				this.$router.push('/');
